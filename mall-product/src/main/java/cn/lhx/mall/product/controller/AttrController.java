@@ -3,7 +3,6 @@ package cn.lhx.mall.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +22,7 @@ import cn.lhx.common.utils.R;
  *
  * @author lhx
  * @email 1193106371@qq.com
- * @date 2020-08-30 15:39:44
+ * @date 2020-08-30 16:31:48
  */
 @RestController
 @RequestMapping("product/attr")
@@ -35,7 +34,7 @@ public class AttrController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("product:attr:list")
+    // @RequiresPermissions("product:attr:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = attrService.queryPage(params);
 
@@ -47,7 +46,7 @@ public class AttrController {
      * 信息
      */
     @RequestMapping("/info/{attrId}")
-    @RequiresPermissions("product:attr:info")
+    //@RequiresPermissions("product:attr:info")
     public R info(@PathVariable("attrId") Long attrId){
 		AttrEntity attr = attrService.getById(attrId);
 
@@ -58,7 +57,7 @@ public class AttrController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("product:attr:save")
+    // @RequiresPermissions("product:attr:save")
     public R save(@RequestBody AttrEntity attr){
 		attrService.save(attr);
 
@@ -69,7 +68,7 @@ public class AttrController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("product:attr:update")
+    // @RequiresPermissions("product:attr:update")
     public R update(@RequestBody AttrEntity attr){
 		attrService.updateById(attr);
 
@@ -80,8 +79,7 @@ public class AttrController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("product:attr:delete")
-    public R delete(@RequestBody Long[] attrIds){
+        public R delete(@RequestBody Long[] attrIds){
 		attrService.removeByIds(Arrays.asList(attrIds));
 
         return R.ok();

@@ -1,4 +1,4 @@
-package io.renren.common.xss;
+package cn.lhx.common.xss;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package cn.lhx.mall.common.utils;
+package cn.lhx.common.utils;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 

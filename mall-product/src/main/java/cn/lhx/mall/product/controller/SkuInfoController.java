@@ -3,7 +3,6 @@ package cn.lhx.mall.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +22,7 @@ import cn.lhx.common.utils.R;
  *
  * @author lhx
  * @email 1193106371@qq.com
- * @date 2020-08-30 16:17:21
+ * @date 2020-08-30 16:31:48
  */
 @RestController
 @RequestMapping("product/skuinfo")

@@ -6,9 +6,9 @@
  * 版权所有，侵权必究！
  */
 
-package io.renren.common.xss;
+package cn.lhx.common.xss;
 
-import io.renren.common.exception.RRException;
+import cn.lhx.common.utils.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**

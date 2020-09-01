@@ -1,4 +1,4 @@
-package cn.lhx.common.utils;
+package cn.lhx.common;
 
 /**
  * @author lee549

@@ -6,12 +6,12 @@
  * 版权所有，侵权必究！
  */
 
-package cn.lhx.mall.common.utils;
+package cn.lhx.common.utils;
 
+import cn.lhx.common.xss.SQLFilter;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import io.renren.common.xss.SQLFilter;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.Map;

@@ -2,17 +2,17 @@ package cn.lhx.mall.product.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 属性&属性分组关联
  * 
  * @author lhx
  * @email 1193106371@qq.com
- * @date 2020-08-30 15:39:44
+ * @date 2020-08-30 16:31:48
  */
 @Data
 @TableName("pms_attr_attrgroup_relation")

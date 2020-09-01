@@ -22,7 +22,7 @@ import cn.lhx.common.utils.R;
  *
  * @author lhx
  * @email 1193106371@qq.com
- * @date 2020-08-30 21:57:11
+ * @date 2020-08-31 18:05:32
  */
 @RestController
 @RequestMapping("coupon/seckillskurelation")

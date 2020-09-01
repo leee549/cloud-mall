@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package io.renren.common.utils;
+package cn.lhx.common.utils;
 
 import org.apache.http.HttpStatus;
 

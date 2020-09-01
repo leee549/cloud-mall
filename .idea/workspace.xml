@@ -2,8 +2,532 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51b6724c-16aa-4aee-8440-8221785c4a53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/das.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/utils/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/utils/PageUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/utils/Query.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/utils/R.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/utils/RRException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/xss/HTMLFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/xss/SQLFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/CategoryBoundsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/CouponController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/CouponHistoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/CouponSpuCategoryRelationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/CouponSpuRelationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/HomeAdvController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/HomeSubjectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/HomeSubjectSpuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/MemberPriceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SeckillPromotionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SeckillSessionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SeckillSkuNoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SeckillSkuRelationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SkuBoundsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SkuFullReductionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SkuLadderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SpuBoundsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/CategoryBoundsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/CouponDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/CouponHistoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/CouponSpuCategoryRelationDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/CouponSpuRelationDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/HomeAdvDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/HomeSubjectDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/HomeSubjectSpuDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/MemberPriceDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/SeckillPromotionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/SeckillSessionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/SeckillSkuNoticeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/SeckillSkuRelationDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/SkuBoundsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/SkuFullReductionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/SkuLadderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/dao/SpuBoundsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/CategoryBoundsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/CouponEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/CouponHistoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/CouponSpuCategoryRelationEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/CouponSpuRelationEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/HomeAdvEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/HomeSubjectEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/HomeSubjectSpuEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/MemberPriceEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/SeckillPromotionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/SeckillSessionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/SeckillSkuNoticeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/SeckillSkuRelationEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/SkuBoundsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/SkuFullReductionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/SkuLadderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/entity/SpuBoundsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/CategoryBoundsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/CouponHistoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/CouponService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/CouponSpuCategoryRelationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/CouponSpuRelationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/HomeAdvService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/HomeSubjectService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/HomeSubjectSpuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/MemberPriceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SeckillPromotionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SeckillSessionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SeckillSkuNoticeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SeckillSkuRelationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SkuBoundsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SkuFullReductionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SkuLadderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SpuBoundsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/CategoryBoundsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/CouponHistoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/CouponServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/CouponSpuCategoryRelationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/CouponSpuRelationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/HomeAdvServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/HomeSubjectServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/HomeSubjectSpuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/MemberPriceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SeckillPromotionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SeckillSessionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SeckillSkuNoticeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SeckillSkuRelationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SkuBoundsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SkuFullReductionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SkuLadderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SpuBoundsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/CategoryBoundsDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/CouponDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/CouponHistoryDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/CouponSpuCategoryRelationDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/CouponSpuRelationDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/HomeAdvDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/HomeSubjectDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/HomeSubjectSpuDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/MemberPriceDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/SeckillPromotionDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/SeckillSessionDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/SeckillSkuNoticeDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/SeckillSkuRelationDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/SkuBoundsDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/SkuFullReductionDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/SkuLadderDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/mapper/coupon/SpuBoundsDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/categorybounds-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/categorybounds.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/coupon-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/coupon.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/couponhistory-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/couponhistory.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/couponspucategoryrelation-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/couponspucategoryrelation.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/couponspurelation-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/couponspurelation.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/homeadv-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/homeadv.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/homesubject-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/homesubject.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/homesubjectspu-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/homesubjectspu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/memberprice-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/memberprice.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/seckillpromotion-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/seckillpromotion.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/seckillsession-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/seckillsession.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/seckillskunotice-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/seckillskunotice.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/seckillskurelation-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/seckillskurelation.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/skubounds-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/skubounds.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/skufullreduction-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/skufullreduction.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/skuladder-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/skuladder.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/spubounds-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/src/views/modules/coupon/spubounds.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/controller/GrowthChangeHistoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/controller/IntegrationChangeHistoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/controller/MemberCollectSpuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/controller/MemberCollectSubjectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/controller/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/controller/MemberLevelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/controller/MemberLoginLogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/controller/MemberReceiveAddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/controller/MemberStatisticsInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/dao/GrowthChangeHistoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/dao/IntegrationChangeHistoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/dao/MemberCollectSpuDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/dao/MemberCollectSubjectDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/dao/MemberDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/dao/MemberLevelDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/dao/MemberLoginLogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/dao/MemberReceiveAddressDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/dao/MemberStatisticsInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/entity/GrowthChangeHistoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/entity/IntegrationChangeHistoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/entity/MemberCollectSpuEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/entity/MemberCollectSubjectEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/entity/MemberEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/entity/MemberLevelEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/entity/MemberLoginLogEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/entity/MemberReceiveAddressEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/entity/MemberStatisticsInfoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/GrowthChangeHistoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/IntegrationChangeHistoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/MemberCollectSpuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/MemberCollectSubjectService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/MemberLevelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/MemberLoginLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/MemberReceiveAddressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/MemberStatisticsInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/impl/GrowthChangeHistoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/impl/IntegrationChangeHistoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/impl/MemberCollectSpuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/impl/MemberCollectSubjectServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/impl/MemberLevelServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/impl/MemberLoginLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/impl/MemberReceiveAddressServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/impl/MemberServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/member/service/impl/MemberStatisticsInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/mapper/member/GrowthChangeHistoryDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/mapper/member/IntegrationChangeHistoryDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/mapper/member/MemberCollectSpuDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/mapper/member/MemberCollectSubjectDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/mapper/member/MemberDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/mapper/member/MemberLevelDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/mapper/member/MemberLoginLogDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/mapper/member/MemberReceiveAddressDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/mapper/member/MemberStatisticsInfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/growthchangehistory-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/growthchangehistory.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/integrationchangehistory-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/integrationchangehistory.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/member-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/member.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/membercollectspu-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/membercollectspu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/membercollectsubject-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/membercollectsubject.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/memberlevel-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/memberlevel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/memberloginlog-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/memberloginlog.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/memberreceiveaddress-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/memberreceiveaddress.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/memberstatisticsinfo-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/src/views/modules/member/memberstatisticsinfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/controller/OrderItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/controller/OrderOperateHistoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/controller/OrderReturnApplyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/controller/OrderReturnReasonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/controller/OrderSettingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/controller/PaymentInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/controller/RefundInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/dao/OrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/dao/OrderItemDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/dao/OrderOperateHistoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/dao/OrderReturnApplyDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/dao/OrderReturnReasonDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/dao/OrderSettingDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/dao/PaymentInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/dao/RefundInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/entity/OrderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/entity/OrderItemEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/entity/OrderOperateHistoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/entity/OrderReturnApplyEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/entity/OrderReturnReasonEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/entity/OrderSettingEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/entity/PaymentInfoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/entity/RefundInfoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/OrderItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/OrderOperateHistoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/OrderReturnApplyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/OrderReturnReasonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/OrderSettingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/PaymentInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/RefundInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/impl/OrderItemServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/impl/OrderOperateHistoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/impl/OrderReturnApplyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/impl/OrderReturnReasonServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/impl/OrderSettingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/impl/PaymentInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/java/cn/lhx/mall/mallorder/service/impl/RefundInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/mapper/order/OrderDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/mapper/order/OrderItemDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/mapper/order/OrderOperateHistoryDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/mapper/order/OrderReturnApplyDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/mapper/order/OrderReturnReasonDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/mapper/order/OrderSettingDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/mapper/order/PaymentInfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/mapper/order/RefundInfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/order-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/order.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/orderitem-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/orderitem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/orderoperatehistory-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/orderoperatehistory.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/orderreturnapply-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/orderreturnapply.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/orderreturnreason-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/orderreturnreason.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/ordersetting-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/ordersetting.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/paymentinfo-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/paymentinfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/refundinfo-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-order/src/main/resources/src/views/modules/order/refundinfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrAttrgroupRelationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrGroupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/BrandController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/CommentReplayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/ProductAttrValueController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SkuImagesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SkuInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SkuSaleAttrValueController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SpuCommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SpuImagesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SpuInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SpuInfoDescController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/AttrAttrgroupRelationDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/AttrDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/AttrGroupDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/BrandDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/CategoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/CommentReplayDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/ProductAttrValueDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/SkuImagesDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/SkuInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/SkuSaleAttrValueDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/SpuCommentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/SpuImagesDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/SpuInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/SpuInfoDescDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/AttrAttrgroupRelationEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/AttrEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/AttrGroupEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/BrandEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/CategoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/CommentReplayEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/ProductAttrValueEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/SkuImagesEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/SkuInfoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/SkuSaleAttrValueEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/SpuCommentEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/SpuImagesEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/SpuInfoDescEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/SpuInfoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrAttrgroupRelationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrGroupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/BrandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/CommentReplayService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/ProductAttrValueService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SkuImagesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SkuInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SkuSaleAttrValueService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuCommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuImagesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuInfoDescService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrAttrgroupRelationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrGroupServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/BrandServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/CommentReplayServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/ProductAttrValueServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SkuImagesServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SkuInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SkuSaleAttrValueServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuCommentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuImagesServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuInfoDescServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/AttrAttrgroupRelationDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/AttrDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/AttrGroupDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/BrandDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/CategoryDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/CommentReplayDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/SpuCommentDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/SpuImagesDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/SpuInfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/SpuInfoDescDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/controller/PurchaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/controller/PurchaseDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/controller/WareInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/controller/WareOrderTaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/controller/WareOrderTaskDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/controller/WareSkuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/dao/PurchaseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/dao/PurchaseDetailDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/dao/WareInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/dao/WareOrderTaskDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/dao/WareOrderTaskDetailDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/dao/WareSkuDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/entity/PurchaseDetailEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/entity/PurchaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/entity/WareInfoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/entity/WareOrderTaskDetailEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/entity/WareOrderTaskEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/entity/WareSkuEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/PurchaseDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/PurchaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/WareInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/WareOrderTaskDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/WareOrderTaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/WareSkuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/impl/PurchaseDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/impl/PurchaseServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/impl/WareInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/impl/WareOrderTaskDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/impl/WareOrderTaskServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/ware/service/impl/WareSkuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/mapper/ware/PurchaseDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/mapper/ware/PurchaseDetailDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/mapper/ware/WareInfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/mapper/ware/WareOrderTaskDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/mapper/ware/WareOrderTaskDetailDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/mapper/ware/WareSkuDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/purchase-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/purchase.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/purchasedetail-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/purchasedetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/wareinfo-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/wareinfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/wareordertask-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/wareordertask.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/wareordertaskdetail-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/wareordertaskdetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/waresku-add-or-update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/src/views/modules/ware/waresku.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/RenrenApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/adaptor/MongoTableInfoAdaptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/config/DbConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/config/MongoCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/config/MongoConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/config/MongoManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/config/MongoNullCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/controller/SysGeneratorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/dao/GeneratorDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/dao/MongoDBGeneratorDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/dao/MySQLGeneratorDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/dao/OracleGeneratorDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/dao/PostgreSQLGeneratorDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/dao/SQLServerGeneratorDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/entity/ColumnEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/entity/TableEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/entity/mongo/MongoDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/entity/mongo/MongoGeneratorEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/entity/mongo/Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/factory/MongoDBCollectionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/service/SysGeneratorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/utils/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/utils/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/utils/GenUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/utils/MongoScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/utils/PageUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/utils/Query.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/utils/R.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/utils/RRException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/java/io/renren/utils/RRExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/generator.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/mapper/MySQLGeneratorDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/mapper/OracleGeneratorDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/mapper/PostgreSQLGeneratorDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/mapper/SQLServerGeneratorDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/css/AdminLTE.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/css/all-skins.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/js/generator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/libs/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/libs/app.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/libs/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/libs/fastclick.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/libs/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/libs/jquery.slimscroll.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/libs/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/libs/vue.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/jqgrid/grid.locale-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/jqgrid/jquery.jqGrid.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/jqgrid/ui.jqgrid-bootstrap-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/jqgrid/ui.jqgrid-bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/jqgrid/ui.jqgrid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/mobile/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/mobile/need/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/skin/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/skin/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/skin/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/skin/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/skin/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/skin/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/skin/moon/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/static/plugins/layer/skin/moon/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/Controller.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/Dao.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/Dao.xml.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/Entity.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/MongoChildrenEntity.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/MongoEntity.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/Service.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/ServiceImpl.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/add-or-update.vue.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/index.vue.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/template/menu.sql.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/views/generator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/main/resources/views/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renren-generator/src/test/java/io/renren/RenrenApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-coupon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-coupon/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-coupon/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-member/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-member/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-member/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-order/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-order/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/MallProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/MallProductApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/test/java/cn/lhx/mall/MallProductApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/test/java/cn/lhx/mall/MallProductApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-ware/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-ware/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-ware/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +538,13 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,13 +566,20 @@
     </option>
   </component>
   <component name="ProjectId" id="1glbcUlt4vrAoVShzzyVTA2dESK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -52,12 +590,80 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
-  <component name="RunManager" selected="Spring Boot.MallProductApplication">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.lhx.common.utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea\workspace\cloud-mall\mall-ware\src\main\resources" />
+      <recent name="D:\idea\workspace\cloud-mall\mall-order\src\main\resources" />
+      <recent name="D:\idea\workspace\cloud-mall\mall-member\src\main\resources" />
+      <recent name="D:\idea\workspace\cloud-mall\mall-coupon\src\main\resources" />
+      <recent name="D:\idea\workspace\cloud-mall\mall-common\src\main\java\cn\lhx\common" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MavenRunConfiguration" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MallOrderApplication">
+    <configuration name="MallProductApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mall-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.lhx.mall.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.lhx.mall" />
+      <option name="MAIN_CLASS_NAME" value="cn.lhx.mall.MallProductApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallProductApplicationTests.list" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mall-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.lhx.mall.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.lhx.mall" />
+      <option name="MAIN_CLASS_NAME" value="cn.lhx.mall.MallProductApplicationTests" />
+      <option name="METHOD_NAME" value="list" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallProductApplicationTests.up" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mall-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.lhx.mall.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.lhx.mall" />
+      <option name="MAIN_CLASS_NAME" value="cn.lhx.mall.MallProductApplicationTests" />
+      <option name="METHOD_NAME" value="up" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MallCouponApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mall-coupon" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.lhx.mall.MallCouponApplication" />
@@ -93,13 +699,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RenrenApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="renren-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.renren.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.renren.RenrenApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RenrenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="renren-fast" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.renren.RenrenApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.RenrenApplication (1)" />
+        <item itemvalue="JUnit.MallProductApplicationTests.list" />
+        <item itemvalue="JUnit.MallProductApplicationTests.up" />
+        <item itemvalue="JUnit.MallProductApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Not Started" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -116,29 +765,75 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598692205714</updated>
-      <workItem from="1598692207015" duration="1005000" />
+      <workItem from="1598692207015" duration="2820000" />
+      <workItem from="1598758493839" duration="953000" />
+      <workItem from="1598759475536" duration="2957000" />
+      <workItem from="1598771358940" duration="6242000" />
+      <workItem from="1598777630855" duration="1751000" />
+      <workItem from="1598795083724" duration="1724000" />
+      <workItem from="1598849154340" duration="1801000" />
+      <workItem from="1598867242101" duration="3820000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="775" y="207" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598692438239">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="775" y="207" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598692438239" />
-    <state x="935" y="284" key="FileChooserDialogImpl" timestamp="1598692718406">
+    <state x="935" y="284" key="FileChooserDialogImpl" timestamp="1598869323575">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="935" y="284" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598692718406" />
-    <state x="635" y="103" key="SettingsEditor" timestamp="1598692853482">
+    <state x="935" y="284" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598869323575" />
+    <state width="917" height="258" key="GridCell.Tab.0.bottom" timestamp="1598873910956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="635" y="103" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598692853482" />
-    <state x="592" y="296" key="new project wizard" timestamp="1598693250644">
+    <state width="917" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
+    <state width="917" height="258" key="GridCell.Tab.0.center" timestamp="1598873910956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="592" y="296" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1598693250644" />
+    <state width="917" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
+    <state width="917" height="258" key="GridCell.Tab.0.left" timestamp="1598873910956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="917" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
+    <state width="917" height="258" key="GridCell.Tab.0.right" timestamp="1598873910956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="917" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
+    <state width="917" height="258" key="GridCell.Tab.1.bottom" timestamp="1598873910957">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="917" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910957" />
+    <state width="917" height="258" key="GridCell.Tab.1.center" timestamp="1598873910956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="917" height="258" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
+    <state width="917" height="258" key="GridCell.Tab.1.left" timestamp="1598873910956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="917" height="258" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
+    <state width="917" height="258" key="GridCell.Tab.1.right" timestamp="1598873910957">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="917" height="258" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910957" />
+    <state x="635" y="103" key="SettingsEditor" timestamp="1598693831787">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="635" y="103" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598693831787" />
+    <state x="592" y="296" key="new project wizard" timestamp="1598773926173">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="592" y="296" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1598773926173" />
+    <state x="818" y="248" width="672" height="678" key="search.everywhere.popup" timestamp="1598777402093">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="818" y="248" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598777402093" />
   </component>
 </project>
