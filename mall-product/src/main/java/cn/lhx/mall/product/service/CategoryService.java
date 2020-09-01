@@ -1,0 +1,20 @@
+package cn.lhx.mall.product.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import cn.lhx.common.utils.PageUtils;
+import cn.lhx.mall.product.entity.CategoryEntity;
+
+import java.util.Map;
+
+/**
+ * 商品三级分类
+ *
+ * @author lhx
+ * @email 1193106371@qq.com
+ * @date 2020-08-30 15:39:44
+ */
+public interface CategoryService extends IService<CategoryEntity> {
+
+    PageUtils queryPage(Map<String, Object> params);
+}
+

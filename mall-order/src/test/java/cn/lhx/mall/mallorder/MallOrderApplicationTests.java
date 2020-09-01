@@ -1,4 +1,4 @@
-package cn.lhx.mall.mallorder;
+package cn.lhx.mall.order;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
