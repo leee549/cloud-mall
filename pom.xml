@@ -18,6 +18,7 @@
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>mall-common</module>
+        <module>mall-thirdpart</module>
     </modules>
     <!--统一管理jar包版本-->
     <properties>

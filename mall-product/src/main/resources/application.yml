@@ -1,4 +1,10 @@
 spring:
+  application:
+    name: mall-product
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848     #nacos服务注册中心地址
   datasource:
     username: root
     password: 123
@@ -10,5 +16,10 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
 server:
   port: 10000
+logging:
+  level:
+    cn.lhx.mall.product.dao: debug

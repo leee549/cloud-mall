@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mall-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848     #nacos服务注册中心地址
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml   #指定配置文件格式
+#        group: DEV_GROUP                  #nacos分组名称
+        namespace: 674eb560-0f8c-43f8-bdb0-dcde00d4a309                          #nacos命名空间 id
+
+# ${prefix}-${spring.profile.active}.${file-extension}  ：nacos-config-client-dev.yaml

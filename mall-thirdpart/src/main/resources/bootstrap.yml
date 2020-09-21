@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mall-thirdpart
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848     #nacos服务注册中心地址
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml   #指定配置文件格式
+        #        group: DEV_GROUP                  #nacos分组名称
+        namespace: 28901929-ef06-4c5e-b4fd-c0b28a094f3a                          #nacos命名空间 id
+
+# ${prefix}-${spring.profile.active}.${file-extension}  ：nacos-config-client-dev.yaml
