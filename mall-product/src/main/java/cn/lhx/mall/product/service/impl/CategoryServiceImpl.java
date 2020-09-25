@@ -1,5 +1,6 @@
 package cn.lhx.mall.product.service.impl;
 
+import cn.lhx.mall.product.service.CategoryBrandRelationService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,10 +18,15 @@ import cn.lhx.common.utils.Query;
 import cn.lhx.mall.product.dao.CategoryDao;
 import cn.lhx.mall.product.entity.CategoryEntity;
 import cn.lhx.mall.product.service.CategoryService;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 
 @Service("categoryService")
 public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity> implements CategoryService {
+    @Resource
+    private CategoryBrandRelationService categoryBrandRelationService;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -75,6 +81,19 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
         return (Long[]) list.toArray(new Long[list.size()]);
     }
+
+    /**
+     * 级联更新所有关联的数据
+     * @param category
+     */
+    @Override
+    @Transactional
+    public void updateCascade(CategoryEntity category) {
+        this.updateById(category);
+        categoryBrandRelationService.updateCategory(category.getCatId(),category.getName());
+
+    }
+
 
     private List<CategoryEntity> getChildren(CategoryEntity root,List<CategoryEntity> all){
         List<CategoryEntity> children = all.stream()
