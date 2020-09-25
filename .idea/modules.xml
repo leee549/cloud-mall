@@ -12,7 +12,6 @@
       <module fileurl="file://$PROJECT_DIR$/mall-thirdpart/mall-thirdpart.iml" filepath="$PROJECT_DIR$/mall-thirdpart/mall-thirdpart.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-ware/mall-ware.iml" filepath="$PROJECT_DIR$/mall-ware/mall-ware.iml" />
       <module fileurl="file://$PROJECT_DIR$/renren-fast/renren-fast.iml" filepath="$PROJECT_DIR$/renren-fast/renren-fast.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../renren-fast-vue/renren-fast-vue.iml" filepath="$PROJECT_DIR$/../renren-fast-vue/renren-fast-vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/renren-generator/renren-generator.iml" filepath="$PROJECT_DIR$/renren-generator/renren-generator.iml" />
     </modules>
   </component>

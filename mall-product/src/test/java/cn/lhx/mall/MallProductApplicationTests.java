@@ -1,9 +1,18 @@
 package cn.lhx.mall;
 
+import cn.lhx.common.utils.PageUtils;
+import cn.lhx.common.utils.Query;
+import cn.lhx.mall.product.dao.AttrGroupDao;
+import cn.lhx.mall.product.entity.AttrEntity;
+import cn.lhx.mall.product.entity.AttrGroupEntity;
 import cn.lhx.mall.product.entity.BrandEntity;
+import cn.lhx.mall.product.service.AttrGroupService;
 import cn.lhx.mall.product.service.BrandService;
+import cn.lhx.mall.product.service.CategoryService;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.gson.Gson;
 import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
@@ -21,15 +30,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import javax.annotation.Resource;
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class MallProductApplicationTests {
     @Resource
     private BrandService brandService;
+    @Resource
+    private AttrGroupService attrGroupService;
+    @Resource
+    private AttrGroupDao attrGroupDao;
+    @Resource
+    CategoryService categoryService;
 
     @Test
     void  testUpload() {
@@ -91,5 +104,10 @@ class MallProductApplicationTests {
         List<BrandEntity> list = brandService.list(new QueryWrapper<BrandEntity>().lambda().eq(BrandEntity::getBrandId, 1L));
         list.forEach(System.out::println);
 
+    }
+    @Test
+    void  test(){
+        Long[] catelogPath = categoryService.findCatelogPath(225L);
+        System.out.println(Arrays.asList(catelogPath));
     }
 }

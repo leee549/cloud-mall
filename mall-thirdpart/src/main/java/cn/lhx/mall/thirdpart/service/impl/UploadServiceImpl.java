@@ -76,9 +76,9 @@ public class UploadServiceImpl implements UploadService {
                 Response response = uploadManager.put(file.getInputStream(),key,upToken,null, null);
                 //解析上传成功的结果
                 DefaultPutRet putRet = JSON.parseObject(response.bodyString(), DefaultPutRet.class);
-                System.out.println(putRet.key);
-                System.out.println(putRet.hash);
-                System.out.println(putRet);
+                // System.out.println(putRet.key);
+                // System.out.println(putRet.hash);
+                // System.out.println(putRet);
                 map.put("url",url+putRet.key);
                 return map;
             } catch (QiniuException ex) {

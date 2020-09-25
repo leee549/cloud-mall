@@ -2,6 +2,8 @@ package cn.lhx.mall.product.service.impl;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -56,6 +58,22 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         //TODO 检查是否被其他地方引用
         //逻辑删除
         baseMapper.deleteBatchIds(asList);
+    }
+
+    @Override
+    public Long[] findCatelogPath(Long catelogId) {
+        List<Long> list = new ArrayList<>();
+        list.add(catelogId);//255
+        CategoryEntity entity = this.getById(catelogId);
+        //1
+        while (entity.getParentCid()!=0){
+            list.add(entity.getParentCid());
+            CategoryEntity byId = this.getById(entity.getParentCid());
+            entity.setParentCid(byId.getParentCid());
+        }
+        Collections.reverse(list);
+
+        return (Long[]) list.toArray(new Long[list.size()]);
     }
 
     private List<CategoryEntity> getChildren(CategoryEntity root,List<CategoryEntity> all){
