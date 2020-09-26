@@ -9,7 +9,7 @@ import lombok.Data;
 
 /**
  * 商品属性
- * 
+ *
  * @author lhx
  * @email 1193106371@qq.com
  * @date 2020-08-30 16:31:48
@@ -56,5 +56,10 @@ public class AttrEntity implements Serializable {
 	 * $column.comments
 	 */
 	private Integer showDesc;
+
+	/**
+	 * 值状态
+	 */
+	private Long valueType;
 
 }

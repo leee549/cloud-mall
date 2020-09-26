@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 /**
+ * 接收前端传来的值
  * @author lee549
  * @date 2020/9/25 22:23
  */
@@ -49,5 +50,10 @@ public class AttrVo extends AttrEntity {
     private Integer showDesc;
 
     private Long attrGroupId;
+
+    /**
+     * 值状态
+     */
+    private Long valueType;
 
 }

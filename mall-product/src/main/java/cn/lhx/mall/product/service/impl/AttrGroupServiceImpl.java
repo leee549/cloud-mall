@@ -1,5 +1,7 @@
 package cn.lhx.mall.product.service.impl;
 
+import cn.lhx.mall.product.entity.AttrEntity;
+import cn.lhx.mall.product.vo.AttrVo;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -50,6 +52,8 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
         }
 
     }
+
+
 
 
 }

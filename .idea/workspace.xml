@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0036645d-7a20-4762-9bce-8cd7a64c5e28" name="Default Changelist" comment="新增品牌功能">
-      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/CategoryBrandRelationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/CategoryBrandRelationDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/CategoryBrandRelationEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/CategoryBrandRelationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/CategoryBrandRelationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/CategoryBrandRelationDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/AttrRespVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/BrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/BrandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/AttrEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/AttrEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrGroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrGroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/BrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/BrandServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/AttrVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/AttrVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renren-fast/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/renren-fast/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/RenrenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/RenrenApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/config/CorsConfig.java" afterDir="false" />
@@ -89,7 +85,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8.0_251" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cloud2020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rbac" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -257,9 +253,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.RenrenApplication (1)" />
-        <item itemvalue="Spring Boot.ThirdPartApplication" />
         <item itemvalue="Spring Boot.MallGatewayApplication" />
+        <item itemvalue="Spring Boot.ThirdPartApplication" />
+        <item itemvalue="Spring Boot.RenrenApplication (1)" />
         <item itemvalue="JUnit.MallProductApplicationTests.test" />
         <item itemvalue="JUnit.MallProductApplicationTests.testUpload" />
       </list>
@@ -280,11 +276,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -333,7 +324,8 @@
       <workItem from="1600732821000" duration="18713000" />
       <workItem from="1600820689489" duration="20112000" />
       <workItem from="1600904719990" duration="7264000" />
-      <workItem from="1600993800699" duration="15734000" />
+      <workItem from="1600993800699" duration="20172000" />
+      <workItem from="1601081443750" duration="13890000" />
     </task>
     <servers />
   </component>
@@ -395,58 +387,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="64" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1600670454356" />
-    <state x="748" y="204" width="438" height="490" key="FileChooserDialogImpl" timestamp="1601002943221">
+    <state x="748" y="204" width="438" height="490" key="FileChooserDialogImpl" timestamp="1601093193903">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="748" y="204" width="438" height="490" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601002943221" />
+    <state x="748" y="204" width="438" height="490" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601093193903" />
     <state x="935" y="284" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598869323575" />
-    <state width="1121" height="233" key="GridCell.Tab.0.bottom" timestamp="1601031678008">
+    <state x="589" y="291" width="382" height="241" key="Github.CreateGistDialog" timestamp="1601084485421">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="589" y="291" width="382" height="241" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1601084485421" />
+    <state width="1121" height="341" key="GridCell.Tab.0.bottom" timestamp="1601107771689">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="297" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="233" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601031678008" />
+    <state width="1121" height="341" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601107771689" />
     <state width="917" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="233" key="GridCell.Tab.0.center" timestamp="1601031678008">
+    <state width="1121" height="341" key="GridCell.Tab.0.center" timestamp="1601107771689">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="297" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="233" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601031678008" />
+    <state width="1121" height="341" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601107771689" />
     <state width="917" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="233" key="GridCell.Tab.0.left" timestamp="1601031678008">
+    <state width="1121" height="341" key="GridCell.Tab.0.left" timestamp="1601107771689">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="297" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1600906721695" />
-    <state width="1121" height="233" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601031678008" />
+    <state width="1121" height="341" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601107771689" />
     <state width="917" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="233" key="GridCell.Tab.0.right" timestamp="1601031678008">
+    <state width="1121" height="341" key="GridCell.Tab.0.right" timestamp="1601107771689">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="297" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="233" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601031678008" />
+    <state width="1121" height="341" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601107771689" />
     <state width="917" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="233" key="GridCell.Tab.1.bottom" timestamp="1601031678008">
+    <state width="1121" height="341" key="GridCell.Tab.1.bottom" timestamp="1601107771689">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="297" key="GridCell.Tab.1.bottom/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="233" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601031678008" />
+    <state width="1121" height="341" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601107771689" />
     <state width="917" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910957" />
-    <state width="1121" height="233" key="GridCell.Tab.1.center" timestamp="1601031678008">
+    <state width="1121" height="341" key="GridCell.Tab.1.center" timestamp="1601107771689">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="297" key="GridCell.Tab.1.center/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="233" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601031678008" />
+    <state width="1121" height="341" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601107771689" />
     <state width="917" height="258" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="233" key="GridCell.Tab.1.left" timestamp="1601031678008">
+    <state width="1121" height="341" key="GridCell.Tab.1.left" timestamp="1601107771689">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="297" key="GridCell.Tab.1.left/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="233" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601031678008" />
+    <state width="1121" height="341" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601107771689" />
     <state width="917" height="258" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="233" key="GridCell.Tab.1.right" timestamp="1601031678008">
+    <state width="1121" height="341" key="GridCell.Tab.1.right" timestamp="1601107771689">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="297" key="GridCell.Tab.1.right/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="233" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601031678008" />
+    <state width="1121" height="341" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601107771689" />
     <state width="917" height="258" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910957" />
     <state x="281" y="110" key="NewModule_or_Project.wizard" timestamp="1599656680325">
       <screen x="0" y="0" width="1536" height="824" />
@@ -478,10 +474,14 @@
     </state>
     <state x="356" y="44" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1600932470827" />
     <state x="592" y="296" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1598773926173" />
-    <state x="654" y="196" width="672" height="538" key="search.everywhere.popup" timestamp="1600738612073">
+    <state x="511" y="39" key="refactoring.ChangeSignatureDialog" timestamp="1601088620798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="654" y="196" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600738612073" />
+    <state x="511" y="39" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1601088620798" />
+    <state x="654" y="196" width="672" height="538" key="search.everywhere.popup" timestamp="1601104852156">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="654" y="196" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601104852156" />
     <state x="818" y="248" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598777402093" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

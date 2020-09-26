@@ -3,7 +3,9 @@ package cn.lhx.mall.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import cn.lhx.mall.product.entity.AttrEntity;
 import cn.lhx.mall.product.service.CategoryService;
+import cn.lhx.mall.product.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -66,8 +68,8 @@ public class AttrGroupController {
      */
     @RequestMapping("/save")
     // @RequiresPermissions("product:attrgroup:save")
-    public R save(@RequestBody AttrGroupEntity attrGroup) {
-        attrGroupService.save(attrGroup);
+    public R save(@RequestBody AttrGroupEntity attrGroupEntity) {
+        attrGroupService.save(attrGroupEntity);
 
         return R.ok();
     }
