@@ -1,17 +1,17 @@
 package cn.lhx.mall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import cn.lhx.mall.product.entity.AttrEntity;
+import cn.lhx.mall.product.service.AttrAttrgroupRelationService;
+import cn.lhx.mall.product.service.AttrService;
 import cn.lhx.mall.product.service.CategoryService;
+import cn.lhx.mall.product.vo.AttrRelationVo;
 import cn.lhx.mall.product.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cn.lhx.mall.product.entity.AttrGroupEntity;
 import cn.lhx.mall.product.service.AttrGroupService;
@@ -36,6 +36,51 @@ public class AttrGroupController {
 
     @Resource
     private CategoryService categoryService;
+
+    @Resource
+    private AttrService attrService;
+
+    @Resource
+    private AttrAttrgroupRelationService relationService;
+    /**
+     * 关联关系列表
+     * @param attrgroupId
+     * @return
+     */
+    @GetMapping("/{attrgroupId}/attr/relation")
+    public R attrRelation(@PathVariable("attrgroupId") Long attrgroupId){
+        List<AttrEntity> entities = attrService.getRelationAttr(attrgroupId);
+        return R.ok().put("data",entities);
+    }
+
+    /**
+     * 获取当前没有关联的所有属性
+     * @param attrgroupId
+     * @param params
+     * @return
+     */
+    @GetMapping("/{attrgroupId}/noattr/relation")
+    public R attrNoRelation(@PathVariable("attrgroupId") Long attrgroupId,
+                            @RequestParam Map<String, Object> params){
+        PageUtils page = attrService.getNoRelationAttr(params,attrgroupId);
+        return R.ok().put("page",page);
+    }
+    @PostMapping("/attr/relation")
+    public R addRelation(@RequestBody List<AttrRelationVo> vos){
+        relationService.saveBatch(vos);
+        return R.ok();
+    }
+
+    /**
+     * 批量删除关联
+     * @param vos
+     * @return
+     */
+    @PostMapping("/attr/relation/delete")
+    public R delRelation(@RequestBody AttrRelationVo[] vos){
+        attrService.delRelation(vos);
+        return R.ok();
+    }
 
     /**
      * 列表
