@@ -3,9 +3,12 @@ package cn.lhx.mall.product.controller;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.common.utils.R;
+import cn.lhx.mall.product.entity.BrandEntity;
+import cn.lhx.mall.product.vo.BrandVo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +40,20 @@ public class CategoryBrandRelationController {
                         .eq(CategoryBrandRelationEntity::getBrandId, brandId)
         );
         return R.ok().put("data", data);
+    }
+
+    @GetMapping("/brands/list")
+    public R relationBrandsList(@RequestParam(value = "catId", required = true) Long catId) {
+        List<BrandEntity> brandEntities = categoryBrandRelationService.getBrandsByCatId(catId);
+        List<BrandVo> collect = brandEntities.stream().map((item) -> {
+            BrandVo brandVo = new BrandVo();
+            brandVo.setBrandId(item.getBrandId());
+            brandVo.setBrandName(item.getName());
+            return brandVo;
+        }).collect(Collectors.toList());
+        return R.ok().put("data",collect);
+
+
     }
 
     /**

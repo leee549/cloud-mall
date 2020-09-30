@@ -1,9 +1,11 @@
 package cn.lhx.mall.product.service;
 
 import cn.lhx.common.utils.PageUtils;
+import cn.lhx.mall.product.entity.BrandEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 import cn.lhx.mall.product.entity.CategoryBrandRelationEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,5 +34,7 @@ public interface CategoryBrandRelationService extends IService<CategoryBrandRela
      * @param name
      */
     void updateCategory(Long catId, String name);
+
+    List<BrandEntity> getBrandsByCatId(Long catId);
 }
 

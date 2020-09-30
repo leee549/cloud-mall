@@ -2,17 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0036645d-7a20-4762-9bce-8cd7a64c5e28" name="Default Changelist" comment="新增品牌功能">
-      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/constant/ProductConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/AttrRelationVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/to/MemberPrice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/to/SkuReductionTo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/to/SpuBoundTo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-member/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/feign/CouponFeignService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/Attr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/AttrGroupWithAttrsVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/BaseAttrs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/Bounds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/BrandVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/Images.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/MemberPrice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/Skus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo/SpuSaveVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/utils/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-common/src/main/java/cn/lhx/common/utils/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/MallCouponApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/MallCouponApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SkuFullReductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SkuFullReductionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SpuBoundsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/controller/SpuBoundsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SkuFullReductionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/SkuFullReductionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SkuFullReductionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-coupon/src/main/java/cn/lhx/mall/coupon/service/impl/SkuFullReductionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-coupon/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-coupon/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/MallMemberApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-member/src/main/java/cn/lhx/mall/MallMemberApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-member/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-member/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/MallProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/MallProductApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/AttrGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/AttrAttrgroupRelationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/dao/AttrAttrgroupRelationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrAttrgroupRelationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrAttrgroupRelationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrAttrgroupRelationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrAttrgroupRelationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/AttrAttrgroupRelationDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/resources/mapper/product/AttrAttrgroupRelationDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/CategoryBrandRelationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/CategoryBrandRelationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SpuInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SpuInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/SpuInfoDescEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/entity/SpuInfoDescEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/AttrGroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/CategoryBrandRelationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/CategoryBrandRelationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/ProductAttrValueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/ProductAttrValueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuImagesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuImagesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuInfoDescService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuInfoDescService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/AttrGroupServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/CategoryBrandRelationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/CategoryBrandRelationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/ProductAttrValueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/ProductAttrValueServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuImagesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuImagesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuInfoDescServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuInfoDescServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-thirdpart/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-thirdpart/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renren-fast/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/renren-fast/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/RenrenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/RenrenApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/config/CorsConfig.java" afterDir="false" />
@@ -37,8 +70,8 @@
       <list>
         <option value="Enum" />
         <option value="AnnotationType" />
-        <option value="Interface" />
         <option value="Vue Single File Component" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -77,6 +110,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -86,7 +120,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8.0_251" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-boot-rbac" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/vo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -98,7 +132,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RebelAgentSelection">
@@ -106,15 +140,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.lhx.common.to" />
       <recent name="cn.lhx.common.config" />
       <recent name="cn.lhx.common.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\idea\Workspace\cloud-mall\mall-product\src\main\java\cn\lhx\mall\product\vo" />
+      <recent name="G:\idea\Workspace\cloud-mall\mall-member\src\main\resources" />
       <recent name="G:\idea\Workspace\renren-fast-vue\src\views\modules\product" />
       <recent name="D:\idea\workspace\cloud-mall\mall-ware\src\main\resources" />
       <recent name="D:\idea\workspace\cloud-mall\mall-order\src\main\resources" />
-      <recent name="D:\idea\workspace\cloud-mall\mall-member\src\main\resources" />
-      <recent name="D:\idea\workspace\cloud-mall\mall-coupon\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -125,7 +160,27 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MallProductApplicationTests.test">
+  <component name="RunManager" selected="Compound.cloudmall">
+    <configuration default="true" type="CompoundRunConfigurationType">
+      <toRun name="MallGatewayApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="RenrenApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallProductApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallCouponApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallMemberApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallWareApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ThirdPartApplication" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cloudmall" type="CompoundRunConfigurationType">
+      <toRun name="MallProductApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallCouponApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallMemberApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="RenrenApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallGatewayApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ThirdPartApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallWareApplication" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
     <configuration name="MallProductApplicationTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mall-product" />
       <extension name="coverage">
@@ -161,11 +216,13 @@
     <configuration name="MallCouponApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mall-coupon" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.lhx.mall.MallCouponApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MallGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="MallGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="mall-gateway" />
       <extension name="coverage">
         <pattern>
@@ -174,6 +231,8 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.lhx.mall.gateway.MallGatewayApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,6 +240,8 @@
     <configuration name="MallMemberApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mall-member" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.lhx.mall.MallMemberApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,6 +249,8 @@
     <configuration name="MallOrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mall-order" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.lhx.mall.mallorder.MallOrderApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -195,6 +258,8 @@
     <configuration name="MallProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mall-product" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.lhx.mall.MallProductApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -202,6 +267,8 @@
     <configuration name="MallWareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mall-ware" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.lhx.mall.MallWareApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -222,11 +289,43 @@
     <configuration name="RenrenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="renren-fast" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="io.renren.RenrenApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThirdPartApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="RenrenApplication1" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="renren-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.renren.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.renren.RenrenApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RenrenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="renren-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.renren.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.renren.RenrenApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThirdPartApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="mall-thirdpart" />
       <extension name="coverage">
         <pattern>
@@ -235,28 +334,30 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.lhx.mall.thirdpart.ThirdPartApplication" />
+      <option name="VM_PARAMETERS" value="-Xmx100m -Xms64m -Xmn32m -Xss16m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Compound.cloudmall" />
       <item itemvalue="JUnit.MallProductApplicationTests.test" />
       <item itemvalue="JUnit.MallProductApplicationTests.testUpload" />
+      <item itemvalue="Spring Boot.MallProductApplication" />
       <item itemvalue="Spring Boot.MallCouponApplication" />
       <item itemvalue="Spring Boot.MallMemberApplication" />
       <item itemvalue="Spring Boot.MallOrderApplication" />
-      <item itemvalue="Spring Boot.MallProductApplication" />
       <item itemvalue="Spring Boot.MallWareApplication" />
       <item itemvalue="Spring Boot.RenrenApplication" />
-      <item itemvalue="Spring Boot.RenrenApplication (1)" />
       <item itemvalue="Spring Boot.MallGatewayApplication" />
       <item itemvalue="Spring Boot.ThirdPartApplication" />
+      <item itemvalue="Spring Boot.RenrenApplication1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.MallGatewayApplication" />
-        <item itemvalue="Spring Boot.ThirdPartApplication" />
-        <item itemvalue="Spring Boot.RenrenApplication (1)" />
+        <item itemvalue="Spring Boot.RenrenApplication" />
+        <item itemvalue="Spring Boot.RenrenApplication1" />
         <item itemvalue="JUnit.MallProductApplicationTests.test" />
         <item itemvalue="JUnit.MallProductApplicationTests.testUpload" />
       </list>
@@ -281,7 +382,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Not Started" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -330,7 +431,10 @@
       <workItem from="1601170893546" duration="4483000" />
       <workItem from="1601180785437" duration="3578000" />
       <workItem from="1601193520985" duration="6167000" />
-      <workItem from="1601252813012" duration="4356000" />
+      <workItem from="1601252813012" duration="16650000" />
+      <workItem from="1601337451372" duration="11763000" />
+      <workItem from="1601372960344" duration="10284000" />
+      <workItem from="1601427255474" duration="3943000" />
     </task>
     <servers />
   </component>
@@ -364,10 +468,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1600856195060" />
-    <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599373800940">
+    <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601428336227">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599373800940" />
+    <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601428336227" />
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1600868490363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -401,62 +505,78 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="589" y="291" width="382" height="241" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1601170938764" />
-    <state width="1121" height="212" key="GridCell.Tab.0.bottom" timestamp="1601257411570">
+    <state width="1121" height="341" key="GridCell.Tab.0.bottom" timestamp="1601439431963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="925" height="297" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="212" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601257411570" />
+    <state width="925" height="308" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
+    <state width="1121" height="341" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601439431963" />
     <state width="917" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="212" key="GridCell.Tab.0.center" timestamp="1601257411569">
+    <state width="1121" height="341" key="GridCell.Tab.0.center" timestamp="1601439431963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="925" height="297" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="212" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601257411569" />
+    <state width="925" height="308" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
+    <state width="1121" height="341" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601439431963" />
     <state width="917" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="212" key="GridCell.Tab.0.left" timestamp="1601257411569">
+    <state width="1121" height="341" key="GridCell.Tab.0.left" timestamp="1601439431962">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="925" height="297" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1600906721695" />
-    <state width="1121" height="212" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601257411569" />
+    <state width="925" height="308" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1601430903442" />
+    <state width="1121" height="341" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601439431962" />
     <state width="917" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="212" key="GridCell.Tab.0.right" timestamp="1601257411570">
+    <state width="1121" height="341" key="GridCell.Tab.0.right" timestamp="1601439431963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="925" height="297" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="212" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601257411570" />
+    <state width="925" height="308" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
+    <state width="1121" height="341" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601439431963" />
     <state width="917" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="212" key="GridCell.Tab.1.bottom" timestamp="1601257411570">
+    <state width="1121" height="341" key="GridCell.Tab.1.bottom" timestamp="1601439431963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="925" height="297" key="GridCell.Tab.1.bottom/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="212" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601257411570" />
+    <state width="925" height="308" key="GridCell.Tab.1.bottom/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
+    <state width="1121" height="341" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601439431963" />
     <state width="917" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910957" />
-    <state width="1121" height="212" key="GridCell.Tab.1.center" timestamp="1601257411570">
+    <state width="1121" height="341" key="GridCell.Tab.1.center" timestamp="1601439431963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="925" height="297" key="GridCell.Tab.1.center/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="212" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601257411570" />
+    <state width="925" height="308" key="GridCell.Tab.1.center/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
+    <state width="1121" height="341" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601439431963" />
     <state width="917" height="258" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="212" key="GridCell.Tab.1.left" timestamp="1601257411570">
+    <state width="1121" height="341" key="GridCell.Tab.1.left" timestamp="1601439431963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="925" height="297" key="GridCell.Tab.1.left/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="212" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601257411570" />
+    <state width="925" height="308" key="GridCell.Tab.1.left/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
+    <state width="1121" height="341" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601439431963" />
     <state width="917" height="258" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="212" key="GridCell.Tab.1.right" timestamp="1601257411570">
+    <state width="1121" height="341" key="GridCell.Tab.1.right" timestamp="1601439431963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="925" height="297" key="GridCell.Tab.1.right/0.0.1280.760@0.0.1280.760" timestamp="1600906721696" />
-    <state width="1121" height="212" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601257411570" />
+    <state width="925" height="308" key="GridCell.Tab.1.right/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
+    <state width="1121" height="341" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601439431963" />
     <state width="917" height="258" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910957" />
+    <state width="1121" height="310" key="GridCell.Tab.2.bottom" timestamp="1601394814696">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1121" height="310" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601394814696" />
+    <state width="1121" height="310" key="GridCell.Tab.2.center" timestamp="1601394814696">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1121" height="310" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1601394814696" />
+    <state width="1121" height="310" key="GridCell.Tab.2.left" timestamp="1601394814696">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1121" height="310" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1601394814696" />
+    <state width="1121" height="310" key="GridCell.Tab.2.right" timestamp="1601394814696">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1121" height="310" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1601394814696" />
     <state x="281" y="110" key="NewModule_or_Project.wizard" timestamp="1599656680325">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="281" y="110" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1599656680325" />
-    <state x="478" y="0" key="SettingsEditor" timestamp="1601180760539">
+    <state x="478" y="0" key="SettingsEditor" timestamp="1601350942636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601180760539" />
+    <state x="478" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601350942636" />
     <state x="635" y="103" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598693831787" />
     <state x="490" y="154" width="561" height="524" key="StructurePopup" timestamp="1599455885349">
       <screen x="0" y="0" width="1536" height="824" />
@@ -483,10 +603,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="511" y="39" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1601196363636" />
-    <state x="654" y="196" width="672" height="538" key="search.everywhere.popup" timestamp="1601110716745">
+    <state x="654" y="196" width="672" height="538" key="search.everywhere.popup" timestamp="1601382685253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="654" y="196" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601110716745" />
+    <state x="654" y="196" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601382685253" />
     <state x="818" y="248" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598777402093" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

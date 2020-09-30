@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: mall-member
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: d4b999ce-b2fd-4ac9-a2df-307fbb2c5c4f

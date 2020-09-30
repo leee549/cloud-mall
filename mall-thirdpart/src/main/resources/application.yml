@@ -16,4 +16,5 @@ qiniu:
   bucket: cloud-mall-saltlee
   accessKey: t8JIzWuyA-33x8Tlt-pdsPFz5wugZAue4NLFY4Lr
   secretKey: MN5v9XHTWtZsMYI0Dcjqk5U--H4bhI1TnISWKJ9K
-  url: http://qgjbfbc2u.hn-bkt.clouddn.com/
+#  url: http://qgjbfbc2u.hn-bkt.clouddn.com/
+  url: http://cloud-mall-oss.saltlee.cn/

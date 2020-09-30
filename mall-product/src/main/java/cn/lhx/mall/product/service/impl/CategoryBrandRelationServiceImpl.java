@@ -6,10 +6,13 @@ import cn.lhx.mall.product.dao.BrandDao;
 import cn.lhx.mall.product.dao.CategoryDao;
 import cn.lhx.mall.product.entity.BrandEntity;
 import cn.lhx.mall.product.entity.CategoryEntity;
+import cn.lhx.mall.product.service.BrandService;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -30,6 +33,9 @@ public class CategoryBrandRelationServiceImpl extends ServiceImpl<CategoryBrandR
     private BrandDao brandDao;
     @Resource
     private CategoryDao categoryDao;
+
+    @Resource
+    private BrandService brandService;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -82,6 +88,17 @@ public class CategoryBrandRelationServiceImpl extends ServiceImpl<CategoryBrandR
                 .lambda()
                 .eq(CategoryBrandRelationEntity::getCatelogId, catId)
         );
+    }
+
+    @Override
+    public List<BrandEntity> getBrandsByCatId(Long catId) {
+        List<CategoryBrandRelationEntity> relationEntities = this.baseMapper.selectList(new QueryWrapper<CategoryBrandRelationEntity>().lambda().eq(CategoryBrandRelationEntity::getCatelogId, catId));
+        List<BrandEntity> collect = relationEntities.stream().map((item) -> {
+            Long brandId = item.getBrandId();
+            BrandEntity byId = brandService.getById(brandId);
+            return byId;
+        }).collect(Collectors.toList());
+        return collect;
     }
 
 }

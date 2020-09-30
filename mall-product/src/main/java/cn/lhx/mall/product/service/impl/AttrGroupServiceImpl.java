@@ -1,10 +1,15 @@
 package cn.lhx.mall.product.service.impl;
 
 import cn.lhx.mall.product.entity.AttrEntity;
+import cn.lhx.mall.product.service.AttrService;
+import cn.lhx.mall.product.vo.AttrGroupWithAttrsVo;
 import cn.lhx.mall.product.vo.AttrVo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -17,9 +22,13 @@ import cn.lhx.mall.product.entity.AttrGroupEntity;
 import cn.lhx.mall.product.service.AttrGroupService;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
+
 
 @Service("attrGroupService")
 public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEntity> implements AttrGroupService {
+    @Resource
+    private AttrService attrService;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -53,7 +62,27 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
 
     }
 
+    /**
+     * 根据分类ID查出所有分组 和分组中的属性
+     *
+     * @param catelogId
+     * @return
+     */
+    @Override
+    public List<AttrGroupWithAttrsVo> getAttrGroupWithAttrsByCatelogId(Long catelogId) {
+        //1.查询分组
+        List<AttrGroupEntity> attrGroupEntities = this.list(new QueryWrapper<AttrGroupEntity>().lambda().eq(AttrGroupEntity::getCatelogId, catelogId));
+        List<AttrGroupWithAttrsVo> collect = attrGroupEntities.stream().map(group -> {
+            AttrGroupWithAttrsVo vo = new AttrGroupWithAttrsVo();
+            BeanUtils.copyProperties(group, vo);
+            List<AttrEntity> attr = attrService.getRelationAttr(vo.getAttrGroupId());
+            vo.setAttrs(attr);
+            return vo;
+        }).collect(Collectors.toList());
+        return collect;
 
+
+    }
 
 
 }
