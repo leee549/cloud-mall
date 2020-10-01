@@ -7,6 +7,7 @@ import cn.lhx.mall.product.entity.*;
 import cn.lhx.mall.product.feign.CouponFeignService;
 import cn.lhx.mall.product.service.*;
 import cn.lhx.mall.product.vo.*;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -173,6 +174,43 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         this.baseMapper.insert(infoEntity);
     }
 
+    @Override
+    public PageUtils queryPageByCondiction(Map<String, Object> params) {
+        LambdaQueryWrapper<SpuInfoEntity> qw = new LambdaQueryWrapper<>();
+        String key = (String) params.get("key");
+        if (!StringUtils.isEmpty(key)){
+                qw.and((w)->{
+                    w.eq(SpuInfoEntity::getId,key);
+                });
+        }
+
+        String status = (String) params.get("status");
+        if (!StringUtils.isEmpty(status)){
+                qw.eq(SpuInfoEntity::getPublishStatus,status);
+        }
+
+        String brandId = (String) params.get("brandId");
+        if (!StringUtils.isEmpty(brandId)){
+                qw.eq(SpuInfoEntity::getBrandId,brandId);
+        }
+
+        String catelogId = (String) params.get("catelogId");
+        if (!StringUtils.isEmpty(catelogId)){
+                qw.eq(SpuInfoEntity::getCatalogId,catelogId);
+        }
+        /**
+         * status: 0
+         * key:
+         * brandId: 5
+         * catelogId: 225
+         */
+        IPage<SpuInfoEntity> page = this.page(
+                new Query<SpuInfoEntity>().getPage(params),
+                qw
+        );
+
+        return new PageUtils(page);
+    }
 
 
 }
