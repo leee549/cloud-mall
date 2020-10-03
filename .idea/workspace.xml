@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0036645d-7a20-4762-9bce-8cd7a64c5e28" name="Default Changelist" comment="新增品牌功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SpuInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SpuInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SpuInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SkuInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/controller/SkuInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SkuInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/SkuInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SkuInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SkuInfoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/java/cn/lhx/mall/product/service/impl/SpuInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-product/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-product/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/MallWareApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mall-ware/src/main/java/cn/lhx/mall/MallWareApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-ware/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mall-ware/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renren-fast/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/renren-fast/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/RenrenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/RenrenApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/renren-fast/src/main/java/io/renren/config/CorsConfig.java" afterDir="false" />
@@ -121,7 +123,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Compound.cloudmall">
+  <component name="RunManager" selected="Spring Boot.MallWareApplication">
     <configuration default="true" type="CompoundRunConfigurationType">
       <toRun name="MallGatewayApplication" type="SpringBootApplicationConfigurationType" />
       <toRun name="RenrenApplication" type="SpringBootApplicationConfigurationType" />
@@ -133,12 +135,13 @@
       <method v="2" />
     </configuration>
     <configuration name="cloudmall" type="CompoundRunConfigurationType">
-      <toRun name="MallProductApplication" type="SpringBootApplicationConfigurationType" />
-      <toRun name="MallCouponApplication" type="SpringBootApplicationConfigurationType" />
       <toRun name="RenrenApplication" type="SpringBootApplicationConfigurationType" />
-      <toRun name="MallMemberApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallWareApplication" type="SpringBootApplicationConfigurationType" />
       <toRun name="MallGatewayApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallCouponApplication" type="SpringBootApplicationConfigurationType" />
       <toRun name="ThirdPartApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallProductApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MallMemberApplication" type="SpringBootApplicationConfigurationType" />
       <method v="2" />
     </configuration>
     <configuration name="MallProductApplicationTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -338,7 +341,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -392,6 +395,8 @@
       <workItem from="1601372960344" duration="10284000" />
       <workItem from="1601427255474" duration="4945000" />
       <workItem from="1601464841312" duration="2689000" />
+      <workItem from="1601514315503" duration="652000" />
+      <workItem from="1601716343184" duration="5534000" />
     </task>
     <servers />
   </component>
@@ -425,10 +430,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1600856195060" />
-    <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601465093168">
+    <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601721882931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601465093168" />
+    <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601721882931" />
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1600868490363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -462,53 +467,53 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="589" y="291" width="382" height="241" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1601170938764" />
-    <state width="1121" height="341" key="GridCell.Tab.0.bottom" timestamp="1601480958567">
+    <state width="1121" height="257" key="GridCell.Tab.0.bottom" timestamp="1601721934855">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="308" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
-    <state width="1121" height="341" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601480958567" />
+    <state width="1121" height="257" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601721934855" />
     <state width="917" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="341" key="GridCell.Tab.0.center" timestamp="1601480958567">
+    <state width="1121" height="257" key="GridCell.Tab.0.center" timestamp="1601721934854">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="308" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
-    <state width="1121" height="341" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601480958567" />
+    <state width="1121" height="257" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601721934854" />
     <state width="917" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="341" key="GridCell.Tab.0.left" timestamp="1601480958567">
+    <state width="1121" height="257" key="GridCell.Tab.0.left" timestamp="1601721934854">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="308" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1601430903442" />
-    <state width="1121" height="341" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601480958567" />
+    <state width="1121" height="257" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601721934854" />
     <state width="917" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="341" key="GridCell.Tab.0.right" timestamp="1601480958567">
+    <state width="1121" height="257" key="GridCell.Tab.0.right" timestamp="1601721934854">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="308" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
-    <state width="1121" height="341" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601480958567" />
+    <state width="1121" height="257" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601721934854" />
     <state width="917" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="341" key="GridCell.Tab.1.bottom" timestamp="1601480958567">
+    <state width="1121" height="257" key="GridCell.Tab.1.bottom" timestamp="1601721934855">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="308" key="GridCell.Tab.1.bottom/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
-    <state width="1121" height="341" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601480958567" />
+    <state width="1121" height="257" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601721934855" />
     <state width="917" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910957" />
-    <state width="1121" height="341" key="GridCell.Tab.1.center" timestamp="1601480958567">
+    <state width="1121" height="257" key="GridCell.Tab.1.center" timestamp="1601721934855">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="308" key="GridCell.Tab.1.center/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
-    <state width="1121" height="341" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601480958567" />
+    <state width="1121" height="257" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601721934855" />
     <state width="917" height="258" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="341" key="GridCell.Tab.1.left" timestamp="1601480958567">
+    <state width="1121" height="257" key="GridCell.Tab.1.left" timestamp="1601721934855">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="308" key="GridCell.Tab.1.left/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
-    <state width="1121" height="341" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601480958567" />
+    <state width="1121" height="257" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601721934855" />
     <state width="917" height="258" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910956" />
-    <state width="1121" height="341" key="GridCell.Tab.1.right" timestamp="1601480958567">
+    <state width="1121" height="257" key="GridCell.Tab.1.right" timestamp="1601721934855">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="925" height="308" key="GridCell.Tab.1.right/0.0.1280.760@0.0.1280.760" timestamp="1601430903443" />
-    <state width="1121" height="341" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601480958567" />
+    <state width="1121" height="257" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601721934855" />
     <state width="917" height="258" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598873910957" />
     <state width="1121" height="310" key="GridCell.Tab.2.bottom" timestamp="1601394814696">
       <screen x="0" y="0" width="1536" height="824" />
@@ -530,10 +535,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="281" y="110" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1599656680325" />
-    <state x="478" y="0" key="SettingsEditor" timestamp="1601350942636">
+    <state x="478" y="0" key="SettingsEditor" timestamp="1601716951221">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601350942636" />
+    <state x="478" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601716951221" />
     <state x="635" y="103" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598693831787" />
     <state x="490" y="154" width="561" height="524" key="StructurePopup" timestamp="1599455885349">
       <screen x="0" y="0" width="1536" height="824" />
@@ -543,10 +548,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600670731208" />
-    <state x="304" y="2" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599891328007">
+    <state x="304" y="2" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601721781232">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="304" y="2" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1599891328007" />
+    <state x="304" y="2" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1601721781232" />
     <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599455748672">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
