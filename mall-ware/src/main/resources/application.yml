@@ -11,6 +11,8 @@ spring:
     #    type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://192.168.56.3:3306/mall_wms?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
@@ -18,3 +20,6 @@ mybatis-plus:
       id-type: auto
 server:
   port: 11000
+logging:
+  level:
+    cn.lhx.mall.ware.dao: debug

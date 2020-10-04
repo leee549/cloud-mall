@@ -1,8 +1,11 @@
 package cn.lhx.mall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import cn.lhx.mall.product.entity.ProductAttrValueEntity;
+import cn.lhx.mall.product.service.ProductAttrValueService;
 import cn.lhx.mall.product.vo.AttrRespVo;
 import cn.lhx.mall.product.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,8 @@ import cn.lhx.mall.product.entity.AttrEntity;
 import cn.lhx.mall.product.service.AttrService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.common.utils.R;
+
+import javax.annotation.Resource;
 
 
 /**
@@ -26,6 +31,16 @@ import cn.lhx.common.utils.R;
 public class AttrController {
     @Autowired
     private AttrService attrService;
+
+    @Resource
+    private ProductAttrValueService productAttrValueService;
+
+    @GetMapping("/base/listforspu/{spuId}")
+    public R baseAttrlistforspu(@PathVariable("spuId") Long spuId){
+        List<ProductAttrValueEntity> entities= productAttrValueService.baseAttrlistforspu(spuId);
+
+        return R.ok().put("data",entities);
+    }
 
     /**
      * 列表
@@ -81,6 +96,18 @@ public class AttrController {
     // @RequiresPermissions("product:attr:update")
     public R update(@RequestBody AttrVo attr) {
         attrService.updateAttr(attr);
+
+        return R.ok();
+    }
+
+    /**
+     * 更新 规格维护
+     * @param
+     * @return
+     */
+    @RequestMapping("/update/{spuId}")
+    public R updateSpuAttr(@PathVariable("spuId")Long spuId,@RequestBody List<ProductAttrValueEntity> entities) {
+        productAttrValueService.updateSpuAttr(spuId,entities);
 
         return R.ok();
     }
