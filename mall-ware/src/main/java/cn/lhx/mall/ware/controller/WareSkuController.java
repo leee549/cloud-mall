@@ -1,20 +1,19 @@
 package cn.lhx.mall.ware.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import cn.lhx.mall.ware.vo.SkuHasStockVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cn.lhx.mall.ware.entity.WareSkuEntity;
 import cn.lhx.mall.ware.service.WareSkuService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.common.utils.R;
 
+import javax.swing.text.html.parser.Entity;
 
 
 /**
@@ -29,6 +28,12 @@ import cn.lhx.common.utils.R;
 public class WareSkuController {
     @Autowired
     private WareSkuService wareSkuService;
+
+    @PostMapping("/hasstock")
+    public R getSkusHasStock(@RequestBody List<Long> skuIds){
+        List<SkuHasStockVo> vos= wareSkuService.getSkusHasStock(skuIds);
+        return R.ok().setData(vos);
+    }
 
     /**
      * 列表

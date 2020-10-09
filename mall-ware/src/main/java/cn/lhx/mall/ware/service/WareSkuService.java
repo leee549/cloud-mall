@@ -1,9 +1,11 @@
 package cn.lhx.mall.ware.service;
 
+import cn.lhx.mall.ware.vo.SkuHasStockVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.mall.ware.entity.WareSkuEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,5 +20,7 @@ public interface WareSkuService extends IService<WareSkuEntity> {
     PageUtils queryPage(Map<String, Object> params);
 
     void addStock(Long skuId, Long wareId, Integer skuNum);
+
+    List<SkuHasStockVo> getSkusHasStock(List<Long> skuIds);
 }
 
