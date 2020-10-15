@@ -42,11 +42,11 @@
     <!--子模块继承之后，提供作用：锁定版本+子module不用谢groupId和version-->
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.0.0</version>
-            </dependency>
+            <!--<dependency>-->
+            <!--    <groupId>org.apache.maven.plugins</groupId>-->
+            <!--    <artifactId>maven-project-info-reports-plugin</artifactId>-->
+            <!--    <version>3.0.0</version>-->
+            <!--</dependency>-->
             <!--spring boot 2.2.2-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>

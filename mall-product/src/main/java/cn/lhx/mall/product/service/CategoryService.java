@@ -1,5 +1,6 @@
 package cn.lhx.mall.product.service;
 
+import cn.lhx.mall.product.vo.Catelog2Vo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.mall.product.entity.CategoryEntity;
@@ -32,5 +33,9 @@ public interface CategoryService extends IService<CategoryEntity> {
 
 
     void updateCascade(CategoryEntity category);
+
+    List<CategoryEntity> getLv1Category();
+
+    Map<String, List<Catelog2Vo>> getCatalogJson();
 }
 

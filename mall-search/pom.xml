@@ -13,6 +13,11 @@
     </properties>
     <artifactId>mall-search</artifactId>
     <dependencies>
+        <!--thymeleaf-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
         <!--导入es-->
         <dependency>
             <groupId>org.elasticsearch.client</groupId>

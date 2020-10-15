@@ -3,6 +3,7 @@ package cn.lhx.mall.product.vo;
 import cn.lhx.mall.product.entity.AttrEntity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 接收前端传来的值
@@ -10,6 +11,7 @@ import lombok.Data;
  * @date 2020/9/25 22:23
  */
 @Data
+@EqualsAndHashCode(callSuper=true)
 public class AttrVo extends AttrEntity {
 
     /**

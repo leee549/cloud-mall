@@ -23,6 +23,7 @@ import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.redisson.api.RedissonClient;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,6 +44,13 @@ class MallProductApplicationTests {
     private AttrGroupDao attrGroupDao;
     @Resource
     CategoryService categoryService;
+    @Resource
+    private RedissonClient redissonClient;
+
+    @Test
+    void testredisson(){
+        System.out.println(redissonClient);
+    }
 
     @Test
     void  testUpload() {

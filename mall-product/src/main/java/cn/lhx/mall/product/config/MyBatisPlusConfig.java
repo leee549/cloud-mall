@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement//开启事务
 @MapperScan("cn.lhx.mall.product.dao")
-public class MybatisPlusConfig {
+public class MyBatisPlusConfig {
 
     /**
      * 分页插件
