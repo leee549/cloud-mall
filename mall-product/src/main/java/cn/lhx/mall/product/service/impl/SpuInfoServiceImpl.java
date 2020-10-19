@@ -238,7 +238,7 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
 
         Set<Long> idSet =new HashSet<>(searchAttrIds);
         List<SkuEsModel.Attrs> attrsList = baseAttrs.stream().filter(item -> {
-            return idSet.contains(item);
+            return idSet.contains(item.getAttrId());
         }).map(item -> {
             SkuEsModel.Attrs attrs = new SkuEsModel.Attrs();
             BeanUtils.copyProperties(item, attrs);

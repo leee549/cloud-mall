@@ -110,10 +110,10 @@
     <!--搜索导航-->
     <div class="header_sous">
       <div class="header_form">
-        <input id="searchText" type="text" placeholder="" />
+        <input id="searchText" onkeypress="search()" type="text" placeholder="" />
         <span style="background: url('/static/index/img/img_12.png') 0 -1px;"></span>
         <!--<button><i class="glyphicon"></i></button>-->
-        <a href="#" ><img src="/static/index/img/img_09.png" onclick="search()" /></a>
+        <a href="javascript:search()"><img src="/static/index/img/img_09.png"  /></a>
       </div>
       <div class="header_ico">
         <div class="header_gw">
@@ -605,7 +605,7 @@
 <script type="text/javascript">
   function search() {
       var keyword=$("#searchText").val()
-      window.location.href="http://search.gulimall.com/search.html?keyword="+keyword;
+      window.location.href="http://search.mall.com/list.html?keyword="+keyword;
   }
 
 </script>
