@@ -37,5 +37,7 @@ public interface CategoryService extends IService<CategoryEntity> {
     List<CategoryEntity> getLv1Category();
 
     Map<String, List<Catelog2Vo>> getCatalogJson();
+
+    CategoryEntity getCatalogByIds(Long catId);
 }
 

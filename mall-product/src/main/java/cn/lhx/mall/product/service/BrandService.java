@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.mall.product.entity.BrandEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,5 +19,7 @@ public interface BrandService extends IService<BrandEntity> {
     PageUtils queryPage(Map<String, Object> params);
 
     void updateDetail(BrandEntity brand);
+
+    List<BrandEntity> getByBrandsById(List<Long> brandIds);
 }
 

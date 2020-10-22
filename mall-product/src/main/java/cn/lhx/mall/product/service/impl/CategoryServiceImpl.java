@@ -169,6 +169,11 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         return parentCid;
     }
 
+    @Override
+    public CategoryEntity getCatalogByIds(Long catId) {
+        return this.baseMapper.selectById(catId);
+    }
+
     public Map<String, List<Catelog2Vo>> getCatalogJson2() {
         /**
          * 1.缓存穿透 ：缓存一个null

@@ -1,15 +1,14 @@
 package cn.lhx.mall.search.service.impl;
 
 import cn.lhx.common.to.es.SkuEsModel;
+import cn.lhx.common.utils.R;
+import cn.lhx.mall.search.feign.ProductFeignService;
 import cn.lhx.mall.search.config.MallElasticSearchConfig;
 import cn.lhx.mall.search.constant.EsConstant;
 import cn.lhx.mall.search.service.MallSearchService;
-import cn.lhx.mall.search.vo.SearchParam;
-import cn.lhx.mall.search.vo.SearchResult;
+import cn.lhx.mall.search.vo.*;
 import com.alibaba.fastjson.JSON;
-import org.apache.lucene.queryparser.xml.builders.BooleanQueryBuilder;
-import org.apache.lucene.search.BooleanQuery;
-import org.apache.lucene.search.TotalHits;
+import com.alibaba.fastjson.TypeReference;
 import org.apache.lucene.search.join.ScoreMode;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -20,9 +19,7 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.RangeQueryBuilder;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
-import org.elasticsearch.search.aggregations.Aggregation;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
-import org.elasticsearch.search.aggregations.Aggregations;
 import org.elasticsearch.search.aggregations.bucket.MultiBucketsAggregation;
 import org.elasticsearch.search.aggregations.bucket.nested.NestedAggregationBuilder;
 import org.elasticsearch.search.aggregations.bucket.nested.ParsedNested;
@@ -39,6 +36,8 @@ import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -51,6 +50,9 @@ import java.util.stream.Collectors;
 public class MallSearchServiceImpl implements MallSearchService {
     @Resource
     private RestHighLevelClient client;
+
+    @Resource
+    private ProductFeignService productFeignService;
 
     @Override
     public SearchResult search(SearchParam param) {
@@ -130,7 +132,7 @@ public class MallSearchServiceImpl implements MallSearchService {
         sourceBuilder.query(boolQuery);
         //排序
         if (!StringUtils.isEmpty(param.getSort())) {
-            //sort=hotscore_asc/desc
+            //sort=hotScore_asc/desc
             String sort = param.getSort();
             String[] s = sort.split("_");
             SortOrder order = "asc".equalsIgnoreCase(s[1]) ? SortOrder.ASC : SortOrder.DESC;
@@ -252,10 +254,113 @@ public class MallSearchServiceImpl implements MallSearchService {
         result.setAttrs(attrVos);
         //分页相关
         long totalHits = hits.getTotalHits().value;
+        //总记录数
         result.setTotal(totalHits);
-        result.setTotalPages((int) Math.ceil((double) totalHits / (double) EsConstant.PRODUCT_PAGESIZE));
+        //总页码
+        int totalPages = (int) Math.ceil((double) totalHits / (double) EsConstant.PRODUCT_PAGESIZE);
+        result.setTotalPages(totalPages);
+        //当前页
         result.setPageNum(param.getPageNum());
+        //每页多少条
+        result.setPageSize(EsConstant.PRODUCT_PAGESIZE);
+
+        //面包屑导航
+        if (param.getAttrs()!=null&&param.getAttrs().size()>0){
+            List<SearchResult.NavVo> collect = param.getAttrs().stream().map(attr -> {
+                SearchResult.NavVo navVo = new SearchResult.NavVo();
+                String[] s = attr.split("_");
+                //attrs=2_5寸:6寸
+                navVo.setNavValue(s[1]);
+
+                R r = productFeignService.attrInfo(Long.parseLong(s[0]));
+                //回显ids
+                result.getAttrIds().add(Long.parseLong(s[0]));
+                if (r.getCode() == 0) {
+                    AttrResponseVo data = r.getData("attr", new TypeReference<AttrResponseVo>() {
+                    });
+                    navVo.setNavName(data.getAttrName());
+                    // navVo.setAttrId(data.getAttrId());
+                } else {
+                    navVo.setNavName(s[0]);
+                }
+                String replace = encodeString(param, attr,"attrs");
+                navVo.setLink(replace);
+                return navVo;
+
+            }).collect(Collectors.toList());
+            result.setNavs(collect);
+
+
+
+
+        }
+        //品牌，分类
+        if (param.getBrandId()!=null&&param.getBrandId().size()>0){
+            List<SearchResult.NavVo> navs=result.getNavs();
+            SearchResult.NavVo navVo = new SearchResult.NavVo();
+            navVo.setNavName("品牌");
+            R r = productFeignService.brandsInfos(param.getBrandId());
+            if (r.getCode()==0){
+                List<BrandVo> brand = r.getData("brand", new TypeReference<List<BrandVo>>() {
+                });
+                StringBuilder builder = new StringBuilder();
+                String replace="";
+                for (BrandVo brandVo : brand) {
+                    builder.append(brandVo.getName()).append("、");
+                    replace = encodeString(param, brandVo.getBrandId()+"","brandId");
+                }
+                navVo.setNavValue(builder.toString());
+                navVo.setLink(replace);
+            }
+            navs.add(navVo);
+            result.setNavs(navs);
+        }
+
+        //todo 分类：不需要导航取消： 提示得有不用 link
+        if (param.getCatalog3Id()!=null&&param.getCatalog3Id().length()>0){
+            List<SearchResult.NavVo> navs=result.getNavs();
+            SearchResult.NavVo navVo = new SearchResult.NavVo();
+            navVo.setNavName("分类");
+
+            // List<Long> catIds=new ArrayList<>();
+            // catIds.add(Long.valueOf(param.getCatalog3Id()));
+            R r = productFeignService.catalogInfos(Long.valueOf(param.getCatalog3Id()));
+            if (r.getCode()==0){
+                CatalogVo catalogVo = r.getData(new TypeReference<CatalogVo>() {
+                });
+                // String replace="";
+                // for (CatalogVo catalog : catalogs) {
+                navVo.setNavValue(catalogVo.getName());
+                    // replace = encodeString(param, catalog.getCatId()+"","catalogId");
+                // }
+                // navVo.setLink(replace);
+            }
+            navs.add(navVo);
+            result.setNavs(navs);
+        }
+
         return result;
+    }
+
+    private String encodeString(SearchParam param, String value,String key) {
+        String encode = null;
+        try {
+            encode = URLEncoder.encode(value, "UTF-8");
+            encode = encode.replace("+","%20");//浏览器对空格编码和java不一样
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        String url="http://search.mall.com/list.html?"+param.getQueryString();
+        url=url.replace("&"+key+"="+encode,"").replace("?"+key+"="+encode,"?");
+        if (url.contains("?&")){
+            url=url.replace("?&","?");
+            if (url.endsWith("?")){
+                url=url.replace("?","");
+            }
+        }else if (url.endsWith("?")){
+            url=url.replace("?","");
+        }
+        return url;
     }
 
 

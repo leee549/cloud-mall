@@ -2,9 +2,12 @@ package cn.lhx.mall.product.service.impl;
 
 import cn.lhx.mall.product.service.CategoryBrandRelationService;
 import cn.lhx.mall.product.service.CategoryService;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
+import java.util.List;
 import java.util.Map;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -55,6 +58,12 @@ public class BrandServiceImpl extends ServiceImpl<BrandDao, BrandEntity> impleme
             //TODO 更新其他关联信息
 
         }
+    }
+
+    @Override
+    public List<BrandEntity> getByBrandsById(List<Long> brandIds) {
+
+        return this.baseMapper.selectList(new LambdaQueryWrapper<BrandEntity>().in(BrandEntity::getBrandId,brandIds));
     }
 
 }

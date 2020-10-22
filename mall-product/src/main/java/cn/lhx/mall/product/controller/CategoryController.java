@@ -55,6 +55,12 @@ public class CategoryController {
         return R.ok().put("data", category);
     }
 
+    @RequestMapping("/infos")
+    public R catalogInfos(@RequestParam("catId") Long catId){
+         CategoryEntity category = categoryService.getCatalogByIds(catId);
+        return R.ok().put("data", category);
+    }
+
     /**
      * 保存
      */

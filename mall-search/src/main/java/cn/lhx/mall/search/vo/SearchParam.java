@@ -21,7 +21,7 @@ public class SearchParam {
     private String catalog3Id;
 
     /**
-     * 排序字段
+     * 排序字段 sort=hotScore_asc/desc  saleCount_asc/desc  skuPrice_asc/desc
      */
     private String sort;
 
@@ -39,4 +39,7 @@ public class SearchParam {
     private List<Long> brandId;
     private List<String> attrs;
     private Integer pageNum=1;
+    //原生的所有查询条件
+    private String queryString;
+
 }
