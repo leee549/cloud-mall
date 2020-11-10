@@ -9,6 +9,8 @@ import cn.lhx.mall.product.entity.BrandEntity;
 import cn.lhx.mall.product.service.AttrGroupService;
 import cn.lhx.mall.product.service.BrandService;
 import cn.lhx.mall.product.service.CategoryService;
+import cn.lhx.mall.product.service.SkuSaleAttrValueService;
+import cn.lhx.mall.product.vo.SkuItemVo;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -46,6 +48,8 @@ class MallProductApplicationTests {
     CategoryService categoryService;
     @Resource
     private RedissonClient redissonClient;
+    @Resource
+    private SkuSaleAttrValueService skuSaleAttrValueService;
 
     @Test
     void testredisson(){
@@ -118,4 +122,16 @@ class MallProductApplicationTests {
         Long[] catelogPath = categoryService.findCatelogPath(225L);
         System.out.println(Arrays.asList(catelogPath));
     }
+
+    @Test
+    void test2(){
+        List<SkuItemVo.SpuItemAttrGroupVo> attrGroupWithAttrsBySpuId = attrGroupService.getAttrGroupWithAttrsBySpuId(2L, 225L);
+        System.out.println(attrGroupWithAttrsBySpuId);
+    }
+    @Test
+    void test3(){
+        List<SkuItemVo.SkuItemSaleAttrVo> saleAttrsBySpuId = skuSaleAttrValueService.getSaleAttrsBySpuId(1L);
+        System.out.println(saleAttrsBySpuId);
+    }
+
 }

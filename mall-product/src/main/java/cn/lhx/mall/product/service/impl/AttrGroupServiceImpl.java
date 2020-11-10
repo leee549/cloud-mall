@@ -1,15 +1,22 @@
 package cn.lhx.mall.product.service.impl;
 
+import cn.lhx.mall.product.entity.AttrAttrgroupRelationEntity;
 import cn.lhx.mall.product.entity.AttrEntity;
+import cn.lhx.mall.product.entity.ProductAttrValueEntity;
+import cn.lhx.mall.product.service.AttrAttrgroupRelationService;
 import cn.lhx.mall.product.service.AttrService;
+import cn.lhx.mall.product.service.ProductAttrValueService;
 import cn.lhx.mall.product.vo.AttrGroupWithAttrsVo;
-import cn.lhx.mall.product.vo.AttrVo;
+import cn.lhx.mall.product.vo.SkuItemVo;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -20,7 +27,9 @@ import cn.lhx.common.utils.Query;
 import cn.lhx.mall.product.dao.AttrGroupDao;
 import cn.lhx.mall.product.entity.AttrGroupEntity;
 import cn.lhx.mall.product.service.AttrGroupService;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
+import sun.plugin.dom.core.Attr;
 
 import javax.annotation.Resource;
 
@@ -29,6 +38,12 @@ import javax.annotation.Resource;
 public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEntity> implements AttrGroupService {
     @Resource
     private AttrService attrService;
+    @Resource
+    private ProductAttrValueService productAttrValueService;
+    @Resource
+    private AttrAttrgroupRelationService attrgroupRelationService;
+    @Resource
+    private AttrGroupService attrGroupService;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -80,6 +95,44 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
             return vo;
         }).collect(Collectors.toList());
         return collect;
+
+
+    }
+
+    @Override
+    @Transactional
+    public List<SkuItemVo.SpuItemAttrGroupVo> getAttrGroupWithAttrsBySpuId(Long spuId, Long catalogId) {
+
+
+        //1.查出当前SPU 对应的分组信息 以及当前分组下的所有属性对应的值
+        //1)spu对应的attr_id
+        List<ProductAttrValueEntity> attrValues = productAttrValueService.list(new LambdaQueryWrapper<ProductAttrValueEntity>().eq(ProductAttrValueEntity::getSpuId, spuId));
+
+        List<SkuItemVo.SpuBaseAttrVo> attrs = attrValues.stream().map((attrValueEntity) -> {
+            SkuItemVo.SpuBaseAttrVo spuBaseAttrVo = new SkuItemVo.SpuBaseAttrVo();
+            //set attrName attrValue
+            spuBaseAttrVo.setAttrValue(attrValueEntity.getAttrValue());
+            spuBaseAttrVo.setAttrName(attrValueEntity.getAttrName());
+            return spuBaseAttrVo;
+
+        }).collect(Collectors.toList());
+        List<Long> attrIds = attrValues.stream().map(ProductAttrValueEntity::getAttrId).collect(Collectors.toList());
+        //拿到AttrIds
+        //查询联系表得到 groupid
+        if (attrIds.size() > 0) {
+            List<AttrAttrgroupRelationEntity> attrGroupRelation = attrgroupRelationService.list(new LambdaQueryWrapper<AttrAttrgroupRelationEntity>().in(AttrAttrgroupRelationEntity::getAttrId, attrIds));
+            List<Long> attrGroupId = attrGroupRelation.stream().map(AttrAttrgroupRelationEntity::getAttrGroupId).collect(Collectors.toList());
+            //查询group信息表
+            List<AttrGroupEntity> attrGroupEntities = attrGroupService.list(new LambdaQueryWrapper<AttrGroupEntity>().in(AttrGroupEntity::getAttrGroupId, attrGroupId).eq(AttrGroupEntity::getCatelogId, catalogId));
+            List<SkuItemVo.SpuItemAttrGroupVo> vos = attrGroupEntities.stream().map((groupEntity) -> {
+                SkuItemVo.SpuItemAttrGroupVo spuItemAttrGroupVo = new SkuItemVo.SpuItemAttrGroupVo();
+                spuItemAttrGroupVo.setGroupName(groupEntity.getAttrGroupName());
+                spuItemAttrGroupVo.setAttrs(attrs);
+                return spuItemAttrGroupVo;
+            }).collect(Collectors.toList());
+            return vos;
+        }
+        return new ArrayList<>();
 
 
     }

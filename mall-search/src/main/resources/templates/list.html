@@ -407,7 +407,7 @@
     </div>
     <div class="header_form">
         <input id="keyword" type="text" th:value="${param.keyword}" onkeypress="searchByKeyword()" placeholder=""/>
-        <a href="javascript:searchByKeyword();">搜索</a>
+        <a href="javascript:pointSearch();">搜索</a>
     </div>
     <div class="header_ico">
         <div class="header_gw">
@@ -1201,7 +1201,7 @@
                                 <a href="/static/search/#">关注</a>
                             </div>
                             <p class="da">
-                                <a href="/static/search/#">
+                                <a th:href="|http://item.mall.com/${product.skuId}.html|">
                                     <img th:src="${product.skuImg}" class="dim">
                                 </a>
                             </p>
@@ -2080,10 +2080,20 @@
 
 
         //导航栏搜索
-        function searchByKeyword() {
-            var keyword = $("#keyword").val()
+        function pointSearch() {
+            var keyword = $("#keyword").val();
+            keyword = keyword.replace(/\s+/g, "");
             searchProducts("keyword", keyword);
         }
+        function searchByKeyword() {
+            $("#keyword").on("keypress", e => {
+            if (e.key === "Enter") {
+                var keyword = $("#keyword").val();
+                keyword = keyword.replace(/\s+/g, "");
+                searchProducts("keyword", keyword);
+            }
+        });
+    }
 
         //跳转页码
         // $(".page_a").click(function () {

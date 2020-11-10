@@ -1,7 +1,7 @@
 package cn.lhx.mall.product.service;
 
 import cn.lhx.mall.product.vo.AttrGroupWithAttrsVo;
-import cn.lhx.mall.product.vo.AttrVo;
+import cn.lhx.mall.product.vo.SkuItemVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.mall.product.entity.AttrGroupEntity;
@@ -23,5 +23,8 @@ public interface AttrGroupService extends IService<AttrGroupEntity> {
     PageUtils queryPage(Map<String, Object> params, Long catelogId);
 
     List<AttrGroupWithAttrsVo> getAttrGroupWithAttrsByCatelogId(Long catelogId);
+
+    List<SkuItemVo.SpuItemAttrGroupVo> getAttrGroupWithAttrsBySpuId(Long spuId, Long catalogId);
+
 }
 

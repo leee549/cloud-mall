@@ -1,5 +1,6 @@
 package cn.lhx.mall.product.service;
 
+import cn.lhx.mall.product.vo.SkuItemVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.mall.product.entity.SkuInfoEntity;
@@ -21,5 +22,7 @@ public interface SkuInfoService extends IService<SkuInfoEntity> {
     PageUtils queryPageByCondiction(Map<String, Object> params);
 
     List<SkuInfoEntity> getSkusBySpuId(Long spuId);
+
+    SkuItemVo itemInfo(Long skuId);
 }
 
