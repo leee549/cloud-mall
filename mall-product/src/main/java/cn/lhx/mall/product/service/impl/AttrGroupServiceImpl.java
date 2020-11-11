@@ -9,10 +9,12 @@ import cn.lhx.mall.product.service.ProductAttrValueService;
 import cn.lhx.mall.product.vo.AttrGroupWithAttrsVo;
 import cn.lhx.mall.product.vo.SkuItemVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import net.sf.jsqlparser.statement.select.GroupByElement;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -100,37 +102,46 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
     }
 
     @Override
-    @Transactional
     public List<SkuItemVo.SpuItemAttrGroupVo> getAttrGroupWithAttrsBySpuId(Long spuId, Long catalogId) {
 
 
         //1.查出当前SPU 对应的分组信息 以及当前分组下的所有属性对应的值
         //1)spu对应的attr_id
         List<ProductAttrValueEntity> attrValues = productAttrValueService.list(new LambdaQueryWrapper<ProductAttrValueEntity>().eq(ProductAttrValueEntity::getSpuId, spuId));
-
-        List<SkuItemVo.SpuBaseAttrVo> attrs = attrValues.stream().map((attrValueEntity) -> {
-            SkuItemVo.SpuBaseAttrVo spuBaseAttrVo = new SkuItemVo.SpuBaseAttrVo();
-            //set attrName attrValue
-            spuBaseAttrVo.setAttrValue(attrValueEntity.getAttrValue());
-            spuBaseAttrVo.setAttrName(attrValueEntity.getAttrName());
-            return spuBaseAttrVo;
-
-        }).collect(Collectors.toList());
+        //拿到AttrIds 1 2 4
         List<Long> attrIds = attrValues.stream().map(ProductAttrValueEntity::getAttrId).collect(Collectors.toList());
-        //拿到AttrIds
         //查询联系表得到 groupid
         if (attrIds.size() > 0) {
+            //得到有关的所有联系
             List<AttrAttrgroupRelationEntity> attrGroupRelation = attrgroupRelationService.list(new LambdaQueryWrapper<AttrAttrgroupRelationEntity>().in(AttrAttrgroupRelationEntity::getAttrId, attrIds));
-            List<Long> attrGroupId = attrGroupRelation.stream().map(AttrAttrgroupRelationEntity::getAttrGroupId).collect(Collectors.toList());
-            //查询group信息表
-            List<AttrGroupEntity> attrGroupEntities = attrGroupService.list(new LambdaQueryWrapper<AttrGroupEntity>().in(AttrGroupEntity::getAttrGroupId, attrGroupId).eq(AttrGroupEntity::getCatelogId, catalogId));
-            List<SkuItemVo.SpuItemAttrGroupVo> vos = attrGroupEntities.stream().map((groupEntity) -> {
+            //得到去重groupId 1 2
+            List<Long> attrGroupId = attrGroupRelation.stream().map(AttrAttrgroupRelationEntity::getAttrGroupId).distinct().collect(Collectors.toList());
+            //根据1 2封装
+            List<SkuItemVo.SpuItemAttrGroupVo> vos = attrGroupId.stream().map(i -> {
+                //分组后的attrids
+                List<Long> relationAttrIds = attrGroupRelation.stream().filter(relation -> {
+                    return relation.getAttrGroupId().equals(i);
+                }).map(AttrAttrgroupRelationEntity::getAttrId).collect(Collectors.toList());
+
                 SkuItemVo.SpuItemAttrGroupVo spuItemAttrGroupVo = new SkuItemVo.SpuItemAttrGroupVo();
-                spuItemAttrGroupVo.setGroupName(groupEntity.getAttrGroupName());
-                spuItemAttrGroupVo.setAttrs(attrs);
+                //查询分组信息
+                AttrGroupEntity attrGroupEntity = attrGroupService.getOne(new LambdaQueryWrapper<AttrGroupEntity>().eq(AttrGroupEntity::getCatelogId,catalogId).eq(AttrGroupEntity::getAttrGroupId,i));
+                // AttrGroupEntity attrGroupEntity = attrGroupService.getById(i);
+                spuItemAttrGroupVo.setGroupName(attrGroupEntity.getAttrGroupName());
+                //查询到Attr集合信息
+                List<ProductAttrValueEntity> productAttrValueEntities = productAttrValueService.list(new LambdaQueryWrapper<ProductAttrValueEntity>().eq(ProductAttrValueEntity::getSpuId,spuId).in(ProductAttrValueEntity::getAttrId, relationAttrIds));
+                //封装attrs信息
+                List<SkuItemVo.SpuBaseAttrVo> spuBaseAttrVos = productAttrValueEntities.stream().map(entity -> {
+                    SkuItemVo.SpuBaseAttrVo spuBaseAttrVo = new SkuItemVo.SpuBaseAttrVo();
+                    spuBaseAttrVo.setAttrValue(entity.getAttrValue());
+                    spuBaseAttrVo.setAttrName(entity.getAttrName());
+                    return spuBaseAttrVo;
+                }).collect(Collectors.toList());
+                spuItemAttrGroupVo.setAttrs(spuBaseAttrVos);
                 return spuItemAttrGroupVo;
             }).collect(Collectors.toList());
             return vos;
+
         }
         return new ArrayList<>();
 

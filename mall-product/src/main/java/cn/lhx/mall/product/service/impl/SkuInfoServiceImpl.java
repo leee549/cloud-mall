@@ -125,7 +125,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
         //5 spu的规格参数信息
         List<SkuItemVo.SpuItemAttrGroupVo> attrGroupVos =attrGroupService.getAttrGroupWithAttrsBySpuId(spuId,catalogId);
         skuItemVo.setGroupAttr(attrGroupVos);
-        return null;
+        return skuItemVo;
 
     }
 

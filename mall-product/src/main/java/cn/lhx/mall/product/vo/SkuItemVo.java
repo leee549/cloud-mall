@@ -43,6 +43,7 @@ public class SkuItemVo {
 
     @Data
     public static class SpuBaseAttrVo {
+        // private Long attrId;
         private String attrName;
         private String attrValue;
     }

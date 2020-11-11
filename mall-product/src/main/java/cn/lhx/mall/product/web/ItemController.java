@@ -3,6 +3,7 @@ package cn.lhx.mall.product.web;
 import cn.lhx.mall.product.service.SkuInfoService;
 import cn.lhx.mall.product.vo.SkuItemVo;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -18,8 +19,9 @@ public class ItemController {
     private SkuInfoService skuInfoService;
 
     @GetMapping("/{skuId}.html")
-    public String skuItem(@PathVariable("skuId") Long skuId){
+    public String skuItem(@PathVariable("skuId") Long skuId, Model model){
         SkuItemVo vo=skuInfoService.itemInfo(skuId);
+        model.addAttribute("item",vo);
         return "item";
     }
 }

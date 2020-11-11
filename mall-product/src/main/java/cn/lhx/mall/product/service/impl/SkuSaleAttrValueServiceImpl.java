@@ -62,7 +62,7 @@ public class SkuSaleAttrValueServiceImpl extends ServiceImpl<SkuSaleAttrValueDao
                 vo.setAttrId(i.getAttrId());
                 vo.setAttrName(i.getAttrName());
                 //根据attrid 查询attrvalue
-                 List<String> collect = attrValueEntities.stream().map(SkuSaleAttrValueEntity::getAttrValue).collect(Collectors.toList());
+                //  List<String> collect = attrValueEntities.stream().map(SkuSaleAttrValueEntity::getAttrValue).collect(Collectors.toList());
                 List<String> attrValue = attrValueEntities.stream().filter(
                         attr ->attr.getAttrId().equals(i.getAttrId())
                 ).map(SkuSaleAttrValueEntity::getAttrValue).collect(Collectors.toList());

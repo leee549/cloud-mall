@@ -125,7 +125,7 @@ class MallProductApplicationTests {
 
     @Test
     void test2(){
-        List<SkuItemVo.SpuItemAttrGroupVo> attrGroupWithAttrsBySpuId = attrGroupService.getAttrGroupWithAttrsBySpuId(2L, 225L);
+        List<SkuItemVo.SpuItemAttrGroupVo> attrGroupWithAttrsBySpuId = attrGroupService.getAttrGroupWithAttrsBySpuId(6L, 225L);
         System.out.println(attrGroupWithAttrsBySpuId);
     }
     @Test
