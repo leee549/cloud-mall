@@ -10,6 +10,7 @@ import cn.lhx.mall.product.service.AttrGroupService;
 import cn.lhx.mall.product.service.BrandService;
 import cn.lhx.mall.product.service.CategoryService;
 import cn.lhx.mall.product.service.SkuSaleAttrValueService;
+import cn.lhx.mall.product.vo.SkuItemSaleAttrVo;
 import cn.lhx.mall.product.vo.SkuItemVo;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -130,7 +131,7 @@ class MallProductApplicationTests {
     }
     @Test
     void test3(){
-        List<SkuItemVo.SkuItemSaleAttrVo> saleAttrsBySpuId = skuSaleAttrValueService.getSaleAttrsBySpuId(1L);
+        List<SkuItemSaleAttrVo> saleAttrsBySpuId = skuSaleAttrValueService.getSaleAttrsBySpuId(1L);
         System.out.println(saleAttrsBySpuId);
     }
 

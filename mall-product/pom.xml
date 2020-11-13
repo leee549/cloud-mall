@@ -16,7 +16,12 @@
         <java.version>1.8</java.version>
         <netty-version>4.1.45.Final</netty-version>
     </properties>
-
+    <!--配置提示-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-configuration-processor</artifactId>
+        <optional>true</optional>
+    </dependency>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

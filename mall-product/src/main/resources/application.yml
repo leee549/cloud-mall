@@ -37,3 +37,8 @@ server:
 logging:
   level:
     cn.lhx.mall.product.dao: debug
+mall:
+  thread:
+    coreSize: 20
+    maxSize: 200
+    keepAliveTime: 10

@@ -103,8 +103,6 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
 
     @Override
     public List<SkuItemVo.SpuItemAttrGroupVo> getAttrGroupWithAttrsBySpuId(Long spuId, Long catalogId) {
-
-
         //1.查出当前SPU 对应的分组信息 以及当前分组下的所有属性对应的值
         //1)spu对应的attr_id
         List<ProductAttrValueEntity> attrValues = productAttrValueService.list(new LambdaQueryWrapper<ProductAttrValueEntity>().eq(ProductAttrValueEntity::getSpuId, spuId));
