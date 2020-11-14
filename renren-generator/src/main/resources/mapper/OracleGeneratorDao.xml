@@ -21,7 +21,7 @@
 		user_tab_comments dtc,
 		user_objects uo
 		where dt.table_name = dtc.table_name and dt.table_name = uo.object_name and uo.object_type='TABLE'
-		<if test="tableName != null and tableName.trim() != ''">
+		<if cn.lhx.mall.thirdpart.test="tableName != null and tableName.trim() != ''">
 			and dt.table_name like concat('%', UPPER(#{tableName}))
 		</if>
 		order by uo.CREATED desc

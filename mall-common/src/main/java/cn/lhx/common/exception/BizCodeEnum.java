@@ -22,6 +22,10 @@ public enum BizCodeEnum {
      */
     VALID_EXCEPTION(10001,"数据校验异常"),
     /**
+     * 验证码频率过高
+     */
+    SMS_CODE_EXCEPTION(10002,"验证码发送频繁，请稍后再试"),
+    /**
      * 商品上架错误
      */
     PRODUCT_UP_EXCEPTION(11000,"商品上架错误");

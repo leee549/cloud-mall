@@ -16,7 +16,7 @@
 	<select id="queryList" resultMap="tableMap">
 		select t1.tablename as tableName, obj_description(relfilenode, 'pg_class') as tableComment, now() as createTime from pg_tables t1, pg_class t2
 		where t1.tablename not like 'pg%' and t1.tablename not like 'sql_%' and t1.tablename = t2.relname
-		<if test="tableName != null and tableName.trim() != ''">
+		<if cn.lhx.mall.thirdpart.test="tableName != null and tableName.trim() != ''">
 			and t1.tablename like concat('%', #{tableName}, '%')
 		</if>
 		order by t1.tablename desc

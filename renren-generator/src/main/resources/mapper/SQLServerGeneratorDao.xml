@@ -11,7 +11,7 @@
 		on sep.major_id=so.id and sep.minor_id=0
 		where (xtype='U' or xtype='v')
 		) t where 1=1
-		<if test="tableName != null and tableName.trim() != ''">
+		<if cn.lhx.mall.thirdpart.test="tableName != null and tableName.trim() != ''">
 			and t.tableName like concat('%', #{tableName}, '%')
 		</if>
 		order by t.tableName
