@@ -11,6 +11,14 @@ import lombok.Setter;
  */
 @AllArgsConstructor
 public enum BizCodeEnum {
+    /**
+     * 10 通用
+     * 11 商品
+     * 12 订单
+     * 13 购物车
+     * 14 物流
+     * 15 用户
+     */
 
 
     /**
@@ -25,6 +33,13 @@ public enum BizCodeEnum {
      * 验证码频率过高
      */
     SMS_CODE_EXCEPTION(10002,"验证码发送频繁，请稍后再试"),
+
+
+    USER_EXIST_EXCEPTION(15001,"用户已存在"),
+
+
+    PHONE_EXIST_EXCEPTION(15002,"手机号已存在"),
+
     /**
      * 商品上架错误
      */

@@ -3,12 +3,12 @@ package cn.lhx.mall.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import cn.lhx.common.exception.BizCodeEnum;
+import cn.lhx.mall.member.exception.PhoneExitsException;
+import cn.lhx.mall.member.exception.UserNameExitsException;
+import cn.lhx.mall.member.vo.MemberRegistVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cn.lhx.mall.member.entity.MemberEntity;
 import cn.lhx.mall.member.service.MemberService;
@@ -29,6 +29,21 @@ import cn.lhx.common.utils.R;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+
+
+    @PostMapping("/regist")
+    public R regist(@RequestBody MemberRegistVo vo){
+        try {
+            memberService.regist(vo);
+        }catch (UserNameExitsException e){
+            return R.error(BizCodeEnum.USER_EXIST_EXCEPTION.code,BizCodeEnum.USER_EXIST_EXCEPTION.msg);
+        }catch (PhoneExitsException e){
+            return R.error(BizCodeEnum.PHONE_EXIST_EXCEPTION.code,BizCodeEnum.PHONE_EXIST_EXCEPTION.msg);
+        }
+        return R.ok();
+
+    }
 
     /**
      * 列表

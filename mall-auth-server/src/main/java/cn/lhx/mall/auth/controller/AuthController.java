@@ -3,18 +3,24 @@ package cn.lhx.mall.auth.controller;
 import cn.lhx.common.constant.AuthServerConstant;
 import cn.lhx.common.exception.BizCodeEnum;
 import cn.lhx.common.utils.R;
+import cn.lhx.mall.auth.feign.MemberFeignService;
 import cn.lhx.mall.auth.feign.ThirdPartFeignService;
 import cn.lhx.mall.auth.vo.UserRegVo;
+import com.alibaba.fastjson.TypeReference;
 import org.apache.commons.lang.StringUtils;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -33,6 +39,9 @@ public class AuthController {
     @Resource(name = "stringRedisTemplate")
     private StringRedisTemplate redisTemplate;
 
+    @Resource
+    private MemberFeignService memberFeignService;
+
 
     @GetMapping("/sms/sendcode")
     @ResponseBody
@@ -41,15 +50,15 @@ public class AuthController {
 
         //2Redis校验验证码   sms:code:1231313  ->  213456
         String redisCode = redisTemplate.opsForValue().get(AuthServerConstant.SMS_CODE_CACHE_PREFIX + phone);
-        if (StringUtils.isNotEmpty(redisCode) ) {
+        if (StringUtils.isNotEmpty(redisCode)) {
             long l = Long.parseLong(redisCode.split("_")[1]);
-            if (System.currentTimeMillis() - l < 60000){
+            if (System.currentTimeMillis() - l < 60000) {
                 //60s不能再发
                 return R.error(BizCodeEnum.SMS_CODE_EXCEPTION.code, BizCodeEnum.SMS_CODE_EXCEPTION.msg);
             }
         }
         String code = randomCode();
-        String setCode=code+"_"+System.currentTimeMillis();
+        String setCode = code + "_" + System.currentTimeMillis();
         //10分钟有效
         redisTemplate.opsForValue().set(AuthServerConstant.SMS_CODE_CACHE_PREFIX + phone, setCode, 10, TimeUnit.MINUTES);
         thirdPartFeignService.SendCode(phone, code);
@@ -57,17 +66,49 @@ public class AuthController {
     }
 
 
+    //todo 分布式session问题
+    //分布式session问题
+
     @PostMapping("/regist")
-    public String regist(@Valid UserRegVo vo, BindingResult result, Model model){
-        if (result.hasErrors()){
+    public String regist(@Valid UserRegVo vo, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
+        if (result.hasErrors()) {
             Map<String, String> errors = result.getFieldErrors().stream().collect(Collectors.toMap(FieldError::getField, FieldError::getDefaultMessage));
-            model.addAttribute("errors",errors);
-            return "forward:/register.html";
+            // model.addAttribute("errors",errors);
+            redirectAttributes.addFlashAttribute("errors", errors);
+            return "redirect:http://auth.mall.com/register.html";
         }
 
         //注册
+        String code = vo.getCode();
+        String s = redisTemplate.opsForValue().get(AuthServerConstant.SMS_CODE_CACHE_PREFIX + vo.getPhone());
+        if (StringUtils.isNotEmpty(s)) {
+            if (code.equals(s.split("_")[0])) {
+                //删除验证码
+                redisTemplate.delete(AuthServerConstant.SMS_CODE_CACHE_PREFIX + vo.getPhone());
+                //验证码通过 //调用远程服务
+                R r = memberFeignService.regist(vo);
+                if (r.getCode() == 0) {
+                    return "redirect:http://auth.mall.com/login.html";
+                } else {
+                    Map<String, String> errors = new HashMap<>(2);
+                    errors.put("msg", r.getData(new TypeReference<String>() {
+                    }));
+                    redirectAttributes.addFlashAttribute("errors", errors);
+                    return "redirect:http://auth.mall.com/register.html";
+                }
+            } else {
+                Map<String, String> errors = new HashMap<>(2);
+                errors.put("code", "验证码错误");
+                redirectAttributes.addFlashAttribute("errors", errors);
+                return "redirect:http://auth.mall.com/register.html";
+            }
+        } else {
+            Map<String, String> errors = new HashMap<>(2);
+            errors.put("code", "验证码错误");
+            redirectAttributes.addFlashAttribute("errors", errors);
+            return "redirect:http://auth.mall.com/register.html";
+        }
 
-        return "redirect:/login.html";
     }
 
     /**
