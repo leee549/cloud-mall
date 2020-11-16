@@ -40,6 +40,8 @@ public enum BizCodeEnum {
 
     PHONE_EXIST_EXCEPTION(15002,"手机号已存在"),
 
+    ACCOUNT_PASSWORD_EXCEPTION(15003,"账号或密码错误"),
+
     /**
      * 商品上架错误
      */

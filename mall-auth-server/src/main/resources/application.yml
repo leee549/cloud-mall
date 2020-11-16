@@ -12,3 +12,8 @@ spring:
     cache: false
 server:
   port: 20000
+
+ribbon:
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+

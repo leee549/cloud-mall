@@ -9,7 +9,7 @@ import lombok.Data;
 
 /**
  * 会员
- * 
+ *
  * @author lhx
  * @email 1193106371@qq.com
  * @date 2020-08-31 18:09:24
@@ -92,5 +92,11 @@ public class MemberEntity implements Serializable {
 	 * $column.comments
 	 */
 	private Date createTime;
+
+	private String socialUid;
+
+	private String accessToken;
+
+	private Long expiresIn;
 
 }

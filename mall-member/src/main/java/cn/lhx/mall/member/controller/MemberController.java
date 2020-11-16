@@ -6,7 +6,9 @@ import java.util.Map;
 import cn.lhx.common.exception.BizCodeEnum;
 import cn.lhx.mall.member.exception.PhoneExitsException;
 import cn.lhx.mall.member.exception.UserNameExitsException;
+import cn.lhx.mall.member.vo.MemberLoginVo;
 import cn.lhx.mall.member.vo.MemberRegistVo;
+import cn.lhx.mall.member.vo.WeiboUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +32,27 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
+    @PostMapping("/oauth2/login")
+    public R oauth2Login(@RequestBody WeiboUser weiboUser) throws Exception {
+        MemberEntity entity = memberService.login(weiboUser);
+        if (entity!=null){
+            //todo 登录成功后的处理
+            return R.ok().setData(entity);
+        }else {
+            return R.error(BizCodeEnum.ACCOUNT_PASSWORD_EXCEPTION.code,BizCodeEnum.ACCOUNT_PASSWORD_EXCEPTION.msg);
+        }
+    }
 
+    @PostMapping("/login")
+    public R login(@RequestBody MemberLoginVo vo){
+        MemberEntity entity = memberService.login(vo);
+        if (entity!=null){
+            //todo 登录成功后的处理
+            return R.ok();
+        }else {
+            return R.error(BizCodeEnum.ACCOUNT_PASSWORD_EXCEPTION.code,BizCodeEnum.ACCOUNT_PASSWORD_EXCEPTION.msg);
+        }
+    }
 
     @PostMapping("/regist")
     public R regist(@RequestBody MemberRegistVo vo){

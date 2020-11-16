@@ -5,6 +5,7 @@ import cn.lhx.common.exception.BizCodeEnum;
 import cn.lhx.common.utils.R;
 import cn.lhx.mall.auth.feign.MemberFeignService;
 import cn.lhx.mall.auth.feign.ThirdPartFeignService;
+import cn.lhx.mall.auth.vo.UserLoginVo;
 import cn.lhx.mall.auth.vo.UserRegVo;
 import com.alibaba.fastjson.TypeReference;
 import org.apache.commons.lang.StringUtils;
@@ -91,7 +92,7 @@ public class AuthController {
                     return "redirect:http://auth.mall.com/login.html";
                 } else {
                     Map<String, String> errors = new HashMap<>(2);
-                    errors.put("msg", r.getData(new TypeReference<String>() {
+                    errors.put("msg", r.getData("msg",new TypeReference<String>() {
                     }));
                     redirectAttributes.addFlashAttribute("errors", errors);
                     return "redirect:http://auth.mall.com/register.html";
@@ -111,6 +112,21 @@ public class AuthController {
 
     }
 
+    @PostMapping("/login")
+    public String login(UserLoginVo vo,RedirectAttributes redirectAttributes){
+        //远程登录
+        R r = memberFeignService.login(vo);
+        if (r.getCode()==0){
+            //成功
+            //todo 登录成功后的处理
+            return "redirect:http://mall.com";
+        }else {
+            Map<String,String> errors =  new HashMap<>(2);
+            errors.put("msg",r.getData("msg",new TypeReference<String>(){}));
+            redirectAttributes.addFlashAttribute("errors",errors);
+            return "redirect:http://auth.mall.com/login.html";
+        }
+    }
     /**
      * 生成6位数字
      *

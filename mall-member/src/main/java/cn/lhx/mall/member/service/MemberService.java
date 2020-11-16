@@ -2,7 +2,9 @@ package cn.lhx.mall.member.service;
 
 import cn.lhx.mall.member.exception.PhoneExitsException;
 import cn.lhx.mall.member.exception.UserNameExitsException;
+import cn.lhx.mall.member.vo.MemberLoginVo;
 import cn.lhx.mall.member.vo.MemberRegistVo;
+import cn.lhx.mall.member.vo.WeiboUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.mall.member.entity.MemberEntity;
@@ -27,5 +29,9 @@ public interface MemberService extends IService<MemberEntity> {
     void checkEmailUnique(String email);
 
     void checkPhoneUnique(String phone) throws PhoneExitsException;
+
+    MemberEntity login(MemberLoginVo vo);
+
+    MemberEntity login(WeiboUser weiboUser) throws Exception;
 }
 
