@@ -25,6 +25,8 @@ spring:
 #      key-prefix: CACHE_            #缓存加前缀，没加使用方法名
       use-key-prefix: true          #使用前缀
       cache-null-values: true      #缓存空值 解决缓存穿透
+  session:
+    store-type: redis #整合springsession
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:

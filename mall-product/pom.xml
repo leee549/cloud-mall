@@ -18,6 +18,11 @@
     </properties>
 
     <dependencies>
+        <!--springsession-->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
         <!--配置提示-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

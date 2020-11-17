@@ -11,6 +11,12 @@
 
     <artifactId>mall-auth-server</artifactId>
     <dependencies>
+        <!--springsession-->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+
         <!-- redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

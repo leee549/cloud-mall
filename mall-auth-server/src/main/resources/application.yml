@@ -10,8 +10,15 @@ spring:
     port: 6379
   thymeleaf:
     cache: false
+  session:
+    store-type: redis  #整合springsession
+
 server:
   port: 20000
+
+  servlet:
+    session:
+      timeout: 30m   #session过期时间
 
 ribbon:
   ConnectTimeout: 60000

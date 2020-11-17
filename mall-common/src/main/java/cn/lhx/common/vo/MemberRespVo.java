@@ -1,7 +1,8 @@
-package cn.lhx.mall.auth.vo;
+package cn.lhx.common.vo;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * @date 2020/11/16 19:48
  */
 @Data
-public class MemberRespVo {
+public class MemberRespVo implements Serializable {
     private Long id;
     /**
      * $column.comments
