@@ -36,7 +36,6 @@ public class MemberController {
     public R oauth2Login(@RequestBody WeiboUser weiboUser) throws Exception {
         MemberEntity entity = memberService.login(weiboUser);
         if (entity!=null){
-            //todo 登录成功后的处理
             return R.ok().setData(entity);
         }else {
             return R.error(BizCodeEnum.ACCOUNT_PASSWORD_EXCEPTION.code,BizCodeEnum.ACCOUNT_PASSWORD_EXCEPTION.msg);
@@ -47,8 +46,7 @@ public class MemberController {
     public R login(@RequestBody MemberLoginVo vo){
         MemberEntity entity = memberService.login(vo);
         if (entity!=null){
-            //todo 登录成功后的处理
-            return R.ok();
+            return R.ok().setData(entity);
         }else {
             return R.error(BizCodeEnum.ACCOUNT_PASSWORD_EXCEPTION.code,BizCodeEnum.ACCOUNT_PASSWORD_EXCEPTION.msg);
         }

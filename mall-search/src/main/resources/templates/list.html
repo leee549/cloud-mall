@@ -68,7 +68,8 @@
         </b>
         <ul>
             <li>
-                <a href="/static/search/#" class="li_2">你好，请登录</a>
+                <a th:if="${session.loginUser==null}" href="http://auth.mall.com/login.html" class="li_2">你好，请登录</a>
+                <a th:else class="li_2">你好，[[${session.loginUser.nickname}]]</a>
             </li>
             <li>
                 <a href="/static/search/#">免费注册</a>

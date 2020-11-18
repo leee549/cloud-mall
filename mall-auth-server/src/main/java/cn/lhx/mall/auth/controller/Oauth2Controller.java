@@ -1,5 +1,6 @@
 package cn.lhx.mall.auth.controller;
 
+import cn.lhx.common.constant.AuthServerConstant;
 import cn.lhx.common.utils.HttpUtils;
 import cn.lhx.common.utils.R;
 import cn.lhx.mall.auth.feign.MemberFeignService;
@@ -49,7 +50,7 @@ public class Oauth2Controller {
             if (r.getCode()==0){
                 MemberRespVo data = r.getData("data", new TypeReference<MemberRespVo>() {
                 });
-                session.setAttribute("loginUser",data);
+                session.setAttribute(AuthServerConstant.LOGIN_USER,data);
                 log.info("登录成功，返回信息：{}",data);
                 //成功回到首页
                 return "redirect:http://mall.com";

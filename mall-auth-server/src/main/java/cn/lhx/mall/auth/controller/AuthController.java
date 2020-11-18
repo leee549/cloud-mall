@@ -3,12 +3,14 @@ package cn.lhx.mall.auth.controller;
 import cn.lhx.common.constant.AuthServerConstant;
 import cn.lhx.common.exception.BizCodeEnum;
 import cn.lhx.common.utils.R;
+import cn.lhx.common.vo.MemberRespVo;
 import cn.lhx.mall.auth.feign.MemberFeignService;
 import cn.lhx.mall.auth.feign.ThirdPartFeignService;
 import cn.lhx.mall.auth.vo.UserLoginVo;
 import cn.lhx.mall.auth.vo.UserRegVo;
 import com.alibaba.fastjson.TypeReference;
 import org.apache.commons.lang.StringUtils;
+import org.apache.http.protocol.HTTP;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import java.util.HashMap;
@@ -111,14 +114,28 @@ public class AuthController {
         }
 
     }
+    @GetMapping("/login.html")
+    public String loginPage(HttpSession session){
+        Object attribute = session.getAttribute(AuthServerConstant.LOGIN_USER);
+        if(attribute==null){
+            //没登陆
+            return "login";
+        }else {
+            return "redirect:http://mall.com";
+        }
+
+    }
 
     @PostMapping("/login")
-    public String login(UserLoginVo vo,RedirectAttributes redirectAttributes){
+    public String login(UserLoginVo vo, RedirectAttributes redirectAttributes, HttpSession session){
         //远程登录
         R r = memberFeignService.login(vo);
         if (r.getCode()==0){
             //成功
             //todo 登录成功后的处理
+            MemberRespVo data = r.getData("data", new TypeReference<MemberRespVo>() {
+            });
+            session.setAttribute(AuthServerConstant.LOGIN_USER,data);
             return "redirect:http://mall.com";
         }else {
             Map<String,String> errors =  new HashMap<>(2);
