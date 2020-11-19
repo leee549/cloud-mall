@@ -22,6 +22,7 @@
         <module>mall-gateway</module>
         <module>mall-search</module>
         <module>mall-auth-server</module>
+        <module>mall-cart</module>
     </modules>
     <!--统一管理jar包版本-->
     <properties>
