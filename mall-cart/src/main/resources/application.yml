@@ -11,3 +11,9 @@ spring:
         server-addr: 127.0.0.1:8848
   redis:
     host: 192.168.56.3
+#线程池相关
+mall:
+  thread:
+    coreSize: 20
+    maxSize: 200
+    keepAliveTime: 10

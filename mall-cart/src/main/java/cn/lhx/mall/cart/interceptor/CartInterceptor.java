@@ -32,7 +32,7 @@ public class CartInterceptor implements HandlerInterceptor {
             //登陆
             userInfoTo.setUserId(member.getId());
         }
-        //没登录
+        //没登录，但有临时用户
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length > 0) {
             for (Cookie cookie : cookies) {
@@ -53,17 +53,27 @@ public class CartInterceptor implements HandlerInterceptor {
         return true;
     }
 
+    /**
+     * 业务执行之后，设置临时用户
+     *
+     * @param request
+     * @param response
+     * @param handler
+     * @param modelAndView
+     * @throws Exception
+     */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
         UserInfoTo userInfoTo = threadLocal.get();
-        if (userInfoTo.isTempUser()) {
+        //不是临时用户才放cookie
+        if (!userInfoTo.isTempUser()) {
             Cookie cookie = new Cookie(CartConstant.TEMP_USER_COOKIE_NAME, userInfoTo.getUserKey());
             cookie.setDomain("mall.com");
             cookie.setMaxAge(CartConstant.TEMP_USER_COOKIE_TIMEOUT);
             response.addCookie(cookie);
         }
-
+        threadLocal.remove();
 
     }
 }

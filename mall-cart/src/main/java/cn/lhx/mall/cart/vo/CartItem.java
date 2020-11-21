@@ -1,22 +1,22 @@
 package cn.lhx.mall.cart.vo;
 
-/**
- * @author lee549
- * @date 2020/11/19 17:24
- */
-
-import lombok.Data;
-
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * 购物项内容
+ *
+ * @author Hhhhhhhhhh
  */
 public class CartItem {
     private Long skuId;
     private Boolean check = true;
     private String title;
+    private String img;
+    private List<String> skuAttr;
+    private BigDecimal price;
+    private Integer count;
+    private BigDecimal totalPrice;
 
     public Long getSkuId() {
         return skuId;
@@ -76,20 +76,16 @@ public class CartItem {
 
     /**
      * 计算总价
+     *
      * @return
      */
     public BigDecimal getTotalPrice() {
-        return this.price.multiply(new BigDecimal(""+this.count));
+        return this.price.multiply(new BigDecimal("" + this.count));
     }
 
     public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    private String img;
-    private List<String> skuAttr;
-    private BigDecimal price;
-    private Integer count;
-    private BigDecimal totalPrice;
 
 }
