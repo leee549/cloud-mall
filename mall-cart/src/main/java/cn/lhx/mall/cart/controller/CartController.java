@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -43,12 +44,23 @@ public class CartController {
 
     /**
      * 添加商品到购物车
+     *
      * @return
      */
     @GetMapping("/addToCart")
-    public String addToCart(@RequestParam("skuId") Long skuId, @RequestParam("num") Integer num, Model model) throws ExecutionException, InterruptedException {
-        CartItem cartItem = cartService.addToCart(skuId,num);
-        model.addAttribute("item",cartItem);
+    public String addToCart(@RequestParam("skuId") Long skuId,
+                            @RequestParam("num") Integer num,
+                            RedirectAttributes redirect) throws ExecutionException, InterruptedException {
+        cartService.addToCart(skuId, num);
+        redirect.addAttribute("skuId", skuId);
+        return "redirect:http://cart.mall.com/addToCartSuccess.html";
+    }
+
+    @GetMapping("/addToCartSuccess.html")
+    public String addToCartSuccessPage(@RequestParam("skuId") Long skuId,Model model) {
+        //重定向到成功页面，再次查询购物车数据
+        CartItem item = cartService.getCartItem(skuId);
+        model.addAttribute("item",item);
         return "success";
     }
 }
