@@ -1,17 +1,16 @@
 package cn.lhx.mall.cart.controller;
 
-import cn.lhx.mall.cart.interceptor.CartInterceptor;
 import cn.lhx.mall.cart.service.CartService;
+import cn.lhx.mall.cart.vo.Cart;
 import cn.lhx.mall.cart.vo.CartItem;
-import cn.lhx.mall.cart.vo.UserInfoTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -22,6 +21,26 @@ import java.util.concurrent.ExecutionException;
 public class CartController {
     @Resource
     private CartService cartService;
+
+    @GetMapping("/deleteItem")
+    public String deleteItem(@RequestParam("skuId") Long skuId){
+        cartService.deleteItem(skuId);
+        return "redirect:http://cart.mall.com/cart.html";
+    }
+
+    @GetMapping("/countItem")
+    public String countItem(@RequestParam("skuId") Long skuId,
+                            @RequestParam("num") Integer num){
+        cartService.changeItemCount(skuId,num);
+        return "redirect:http://cart.mall.com/cart.html";
+    }
+
+    @GetMapping("/checkItem")
+    public String checkItem(@RequestParam("skuId") Long skuId,
+                            @RequestParam("check") Integer check){
+        cartService.checkItem(skuId,check);
+        return "redirect:http://cart.mall.com/cart.html";
+    }
 
     /**
      * 浏览器有一个user-key标识用户身份 一个月过期
@@ -35,10 +54,9 @@ public class CartController {
      * @return
      */
     @GetMapping("/cart.html")
-    public String cartListPage() {
-        //同一个线程数据共享
-        UserInfoTo userInfoTo = CartInterceptor.threadLocal.get();
-        System.out.println(userInfoTo);
+    public String cartListPage(Model model) throws ExecutionException, InterruptedException {
+        Cart cart = cartService.getCart();
+        model.addAttribute("cart",cart);
         return "cartList";
     }
 
@@ -56,6 +74,12 @@ public class CartController {
         return "redirect:http://cart.mall.com/addToCartSuccess.html";
     }
 
+    /**
+     * 成功添加到购物车页面
+     * @param skuId
+     * @param model
+     * @return
+     */
     @GetMapping("/addToCartSuccess.html")
     public String addToCartSuccessPage(@RequestParam("skuId") Long skuId,Model model) {
         //重定向到成功页面，再次查询购物车数据
