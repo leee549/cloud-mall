@@ -13,7 +13,7 @@ spring:
             - Path=/api/product/**
           filters:
             - RewritePath=/api/(?<segment>/?.*), /$\{segment}
-
+          # 访问/api/product/** 的时候匹配所有 以/api/开头的  重写成/xxx
         - id: member_ware
           uri: lb://mall-ware
           predicates:
@@ -61,5 +61,11 @@ spring:
           uri: lb://mall-cart
           predicates:
             - Host=cart.mall.com
+
+
+        - id: mall_order_route
+          uri: lb://mall-order
+          predicates:
+            - Host=order.mall.com
 server:
   port: 88

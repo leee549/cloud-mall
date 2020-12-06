@@ -5,6 +5,33 @@ spring:
     #    type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://192.168.56.3:3306/mall_oms?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
+  rabbitmq:
+    host: 192.168.56.3
+    port: 5672
+    virtual-host: /
+    #消息确认已发送到交换机
+    publisher-confirm-type: correlated
+    # 消息确认从交换机到队列
+    publisher-returns: true
+    #只要抵达队列，就以异步的形式优先回调return confirm
+    template:
+      mandatory: true
+    #手动ack确认消息
+    listener:
+      simple:
+        acknowledge-mode: manual
+  thymeleaf:
+    cache: false
+  session:
+    store-type: redis
+  redis:
+    host: 192.168.56.3
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: mall-order
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
@@ -12,3 +39,8 @@ mybatis-plus:
       id-type: auto
 server:
   port: 9000
+mall:
+  thread:
+    coreSize: 20
+    maxSize: 200
+    keepAliveTime: 10
