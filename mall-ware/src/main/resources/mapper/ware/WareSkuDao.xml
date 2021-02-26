@@ -4,6 +4,14 @@
 <mapper namespace="cn.lhx.mall.ware.dao.WareSkuDao">
 
 	<!-- 可根据自己的需求，是否要使用 -->
+    <sql id="Base_Column_List">
+        id,
+        sku_id,
+        ware_id,
+        stock,
+        sku_name,
+        stock_locked
+    </sql>
     <resultMap type="cn.lhx.mall.ware.entity.WareSkuEntity" id="wareSkuMap">
         <result property="id" column="id"/>
         <result property="skuId" column="sku_id"/>
@@ -20,5 +28,17 @@
         select sum(stock-stock_locked) from `wms_ware_sku` where sku_id=#{skuId}
     </select>
 
+    <select id="listWareIdHasSkuStock" resultType="java.lang.Long">
+        select ware_id from `wms_ware_sku` where sku_id=#{skuId} and stock-stock_locked>0
+    </select>
 
+    <update id="lockSkuStock">
+        update wms_ware_sku set stock_locked = stock_locked+#{num}
+        where sku_id=#{skuId} and ware_id=#{wareId} and stock - stock_locked >= #{num}
+    </update>
+
+    <update id="unLockStock">
+        update wms_ware_sku set stock_locked=stock_locked-#{num}
+        where sku_id=#{skuId} and ware_id =#{wareId}
+    </update>
 </mapper>

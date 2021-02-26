@@ -50,6 +50,7 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
+
         <!-- httpcore -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>

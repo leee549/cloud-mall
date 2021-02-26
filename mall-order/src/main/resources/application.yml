@@ -20,6 +20,8 @@ spring:
     listener:
       simple:
         acknowledge-mode: manual
+    username: guest
+    password: guest
   thymeleaf:
     cache: false
   session:

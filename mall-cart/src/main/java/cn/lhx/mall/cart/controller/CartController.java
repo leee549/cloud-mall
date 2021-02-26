@@ -1,6 +1,7 @@
 package cn.lhx.mall.cart.controller;
 
 import cn.lhx.mall.cart.service.CartService;
+import cn.lhx.mall.cart.service.impl.CartServiceImpl;
 import cn.lhx.mall.cart.vo.Cart;
 import cn.lhx.mall.cart.vo.CartItem;
 import org.springframework.stereotype.Controller;
@@ -8,9 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -21,6 +24,12 @@ import java.util.concurrent.ExecutionException;
 public class CartController {
     @Resource
     private CartService cartService;
+
+    @GetMapping("/currentUserCartItems")
+    @ResponseBody
+    public List<CartItem> getCurrentUserCartItems(){
+        return cartService.getUserCartItems();
+    }
 
     @GetMapping("/deleteItem")
     public String deleteItem(@RequestParam("skuId") Long skuId){

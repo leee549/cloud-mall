@@ -1,4 +1,4 @@
-package cn.lhx.mall.order.vo;
+package cn.lhx.mall.ware.vo;
 
 import lombok.Data;
 

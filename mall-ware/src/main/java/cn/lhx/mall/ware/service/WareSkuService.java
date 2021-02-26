@@ -1,6 +1,9 @@
 package cn.lhx.mall.ware.service;
 
+import cn.lhx.common.to.mq.StockLockedTo;
+import cn.lhx.mall.ware.vo.LockStockResult;
 import cn.lhx.mall.ware.vo.SkuHasStockVo;
+import cn.lhx.mall.ware.vo.WareSkuLockVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.mall.ware.entity.WareSkuEntity;
@@ -22,5 +25,9 @@ public interface WareSkuService extends IService<WareSkuEntity> {
     void addStock(Long skuId, Long wareId, Integer skuNum);
 
     List<SkuHasStockVo> getSkusHasStock(List<Long> skuIds);
+
+    Boolean orderLockStock(WareSkuLockVo vo);
+
+    void unlockStock(StockLockedTo to);
 }
 

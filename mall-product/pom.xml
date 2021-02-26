@@ -18,6 +18,11 @@
     </properties>
 
     <dependencies>
+        <!--seata-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
         <!--springsession-->
         <dependency>
             <groupId>org.springframework.session</groupId>

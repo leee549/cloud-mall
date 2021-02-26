@@ -3,6 +3,7 @@ package cn.lhx.mall.cart.service;
 import cn.lhx.mall.cart.vo.Cart;
 import cn.lhx.mall.cart.vo.CartItem;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -60,4 +61,6 @@ public interface CartService {
      * @param skuId
      */
     void deleteItem(Long skuId);
+
+    List<CartItem> getUserCartItems();
 }

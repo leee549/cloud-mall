@@ -4,7 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import cn.lhx.common.exception.BizCodeEnum;
+
+import cn.lhx.common.exception.NoStockException;
 import cn.lhx.mall.ware.vo.SkuHasStockVo;
+import cn.lhx.mall.ware.vo.WareSkuLockVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +17,6 @@ import cn.lhx.mall.ware.service.WareSkuService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.common.utils.R;
 
-import javax.swing.text.html.parser.Entity;
 
 
 /**
@@ -28,6 +31,17 @@ import javax.swing.text.html.parser.Entity;
 public class WareSkuController {
     @Autowired
     private WareSkuService wareSkuService;
+
+
+    @PostMapping("/lock/order")
+    public R orderLockStock(@RequestBody WareSkuLockVo vo){
+        try {
+            Boolean stockResults = wareSkuService.orderLockStock(vo);
+            return R.ok();
+        }catch (NoStockException e){
+            return R.error(BizCodeEnum.NO_STOCK_EXCEPTION.getCode(),BizCodeEnum.NO_STOCK_EXCEPTION.getMsg());
+        }
+    }
 
     @PostMapping("/hasstock")
     public R getSkusHasStock(@RequestBody List<Long> skuIds){

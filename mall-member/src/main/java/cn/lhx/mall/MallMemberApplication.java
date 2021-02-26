@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @MapperScan("cn.lhx.mall.member.dao")
 @SpringBootApplication
-// @EnableFeignClients("cn.lhx.mall.member.feign")
+@EnableFeignClients
 public class MallMemberApplication {
 
     public static void main(String[] args) {

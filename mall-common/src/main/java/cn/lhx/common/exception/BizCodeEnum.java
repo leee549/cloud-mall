@@ -18,6 +18,7 @@ public enum BizCodeEnum {
      * 13 购物车
      * 14 物流
      * 15 用户
+     * 21 库存
      */
 
 
@@ -42,6 +43,8 @@ public enum BizCodeEnum {
 
     ACCOUNT_PASSWORD_EXCEPTION(15003,"账号或密码错误"),
 
+    NO_STOCK_EXCEPTION(21000,"商品库存不足"),
+
     /**
      * 商品上架错误
      */
@@ -51,6 +54,12 @@ public enum BizCodeEnum {
     public int code;
     public String msg;
 
+    public int getCode() {
+        return code;
+    }
 
+    public String getMsg() {
+        return msg;
+    }
 
 }

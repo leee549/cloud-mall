@@ -14,6 +14,7 @@ import cn.lhx.mall.product.service.*;
 import cn.lhx.mall.product.vo.*;
 import com.alibaba.fastjson.TypeReference;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -70,6 +71,12 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
 
         return new PageUtils(page);
     }
+
+    /**
+     * 适合seata 的AT 模式，不需要大并发
+     * @param vo
+     */
+    @GlobalTransactional
     @Transactional(rollbackFor = {})
     @Override
     public void saveSpuInfo(SpuSaveVo vo) {
@@ -290,6 +297,15 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
             // todo  7重复调用问题 接口幂等性
         }
 
+
+    }
+
+    @Override
+    public SpuInfoEntity getSpuInfoBySkuId(Long skuId) {
+        SkuInfoEntity byId = skuInfoService.getById(skuId);
+        Long spuId = byId.getSpuId();
+        SpuInfoEntity spuInfoEntity = getById(spuId);
+        return spuInfoEntity;
 
     }
 
