@@ -1,5 +1,6 @@
 package cn.lhx.mall.ware.service;
 
+import cn.lhx.common.to.mq.OrderTo;
 import cn.lhx.common.to.mq.StockLockedTo;
 import cn.lhx.mall.ware.vo.LockStockResult;
 import cn.lhx.mall.ware.vo.SkuHasStockVo;
@@ -29,5 +30,7 @@ public interface WareSkuService extends IService<WareSkuEntity> {
     Boolean orderLockStock(WareSkuLockVo vo);
 
     void unlockStock(StockLockedTo to);
+
+    void unlockStock(OrderTo orderTo);
 }
 

@@ -1,5 +1,6 @@
 package cn.lhx.mall.ware.listener;
 
+import cn.lhx.common.to.mq.OrderTo;
 import cn.lhx.common.to.mq.StockDetailTo;
 import cn.lhx.common.to.mq.StockLockedTo;
 import cn.lhx.common.utils.R;
@@ -51,7 +52,16 @@ public class StockReleaseListener {
             //重新回队
             channel.basicReject(message.getMessageProperties().getDeliveryTag(),true);
         }
-
-
+    }
+    @RabbitHandler
+    public void handleOrderCloseRelease(OrderTo orderTo, Message message, Channel channel) throws IOException {
+        try {
+            logger.info("订单关闭准备解锁库存...");
+            wareSkuService.unlockStock(orderTo);
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+        }catch (Exception e){
+            //重新回队
+            channel.basicReject(message.getMessageProperties().getDeliveryTag(),true);
+        }
     }
 }

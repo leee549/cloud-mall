@@ -67,5 +67,10 @@ spring:
           uri: lb://mall-order
           predicates:
             - Host=order.mall.com
+
+        - id: mall_member_route
+          uri: lb://mall-member
+          predicates:
+            - Host=member.mall.com
 server:
   port: 88

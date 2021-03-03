@@ -3,6 +3,7 @@ package cn.lhx.mall.order.service;
 import cn.lhx.mall.order.vo.OrderConfirmVo;
 import cn.lhx.mall.order.vo.OrderSubmitResponseVo;
 import cn.lhx.mall.order.vo.OrderSubmitVo;
+import cn.lhx.mall.order.vo.PayVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import cn.lhx.common.utils.PageUtils;
 import cn.lhx.mall.order.entity.OrderEntity;
@@ -32,5 +33,7 @@ public interface OrderService extends IService<OrderEntity> {
     OrderEntity getOrderByOrderSn(String orderSn);
 
     void closeOrder(OrderEntity entity);
+
+    PayVo getOrderPay(String orderSn);
 }
 

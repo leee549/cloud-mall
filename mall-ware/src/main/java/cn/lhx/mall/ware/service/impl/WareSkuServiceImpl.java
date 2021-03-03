@@ -2,6 +2,7 @@ package cn.lhx.mall.ware.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.lhx.common.exception.NoStockException;
+import cn.lhx.common.to.mq.OrderTo;
 import cn.lhx.common.to.mq.StockDetailTo;
 import cn.lhx.common.to.mq.StockLockedTo;
 import cn.lhx.common.utils.R;
@@ -249,6 +250,21 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
             //无需解锁
         }
 
+    }
+
+    //防止订单服务卡顿导致订单状态一直改不了，库存优先到期，查订单状态是新建，什么都不做就跳过，导致永远不能解锁
+    @Transactional
+    @Override
+    public void unlockStock(OrderTo orderTo) {
+        //查最新库存防止重复解锁库存
+        WareOrderTaskEntity task = wareOrderTaskService.getOrderByOrderSn(orderTo.getOrderSn());
+        //按照工作单找到所有没解锁的库存进行解锁
+        List<WareOrderTaskDetailEntity> list = wareOrderTaskDetailService.list(new LambdaQueryWrapper<WareOrderTaskDetailEntity>()
+                .eq(WareOrderTaskDetailEntity::getTaskId, task.getId())
+                .eq(WareOrderTaskDetailEntity::getLockStatus, 1));
+        for (WareOrderTaskDetailEntity entity : list) {
+            unLockStock(entity.getSkuId(),entity.getWareId(),entity.getSkuNum(),entity.getId());
+        }
     }
 
     @Data

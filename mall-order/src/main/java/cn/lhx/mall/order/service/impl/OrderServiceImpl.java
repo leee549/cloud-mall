@@ -1,7 +1,9 @@
 package cn.lhx.mall.order.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.lhx.common.exception.NoStockException;
 import cn.lhx.common.to.SkuHasStockVo;
+import cn.lhx.common.to.mq.OrderTo;
 import cn.lhx.common.utils.R;
 import cn.lhx.common.vo.MemberRespVo;
 import cn.lhx.mall.order.constant.OrderConstant;
@@ -21,6 +23,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.BeanUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
@@ -224,9 +227,31 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, OrderEntity> impleme
             update.setId(entity.getId());
             update.setStatus(OrderStatusEnum.CANCLED.getCode());
             this.updateById(update);
+            OrderTo orderTo = new OrderTo();
+            BeanUtils.copyProperties(orderEntity,orderTo);
+            //发给MQ
+            try {
+                //TODO 保证消息一定要发出去
+                rabbitTemplate.convertAndSend("order-event-exchange","order.release.other",orderTo);
+            }catch (Exception e){
+            }
         }
 
 
+    }
+
+    @Override
+    public PayVo getOrderPay(String orderSn) {
+        PayVo payVo = new PayVo();
+        OrderEntity order = this.getOrderByOrderSn(orderSn);
+        payVo.setTotal_amount(order.getTotalAmount().setScale(2,BigDecimal.ROUND_UP).toString());
+
+        List<OrderItemEntity> list = orderItemService.list(new LambdaQueryWrapper<OrderItemEntity>().eq(OrderItemEntity::getOrderSn, orderSn));
+        OrderItemEntity itemEntity = list.get(0);
+        payVo.setBody(itemEntity.getSkuAttrsVals());
+        payVo.setSubject(itemEntity.getSkuName());
+        payVo.setOut_trade_no(order.getOrderSn());
+        return payVo;
     }
 
     /**

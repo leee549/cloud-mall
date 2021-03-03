@@ -69,4 +69,16 @@ public class MyRabbitMQConfig {
                 null);
     }
 
+    /**
+     * 订单释放直接和库存释放进行绑定
+     * @return
+     */
+    @Bean
+    public Binding orderReleaseOtherBinding(){
+        return new Binding("order.release.stock.queue",
+                Binding.DestinationType.QUEUE,
+                "order-event-exchange",
+                "order.release.other.#",
+                null);
+    }
 }
