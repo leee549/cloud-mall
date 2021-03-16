@@ -16,7 +16,7 @@
 	<select id="queryList" resultMap="tableMap">
 		select t1.tablename as tableName, obj_description(relfilenode, 'pg_class') as tableComment, now() as createTime from pg_tables t1, pg_class t2
 		where t1.tablename not like 'pg%' and t1.tablename not like 'sql_%' and t1.tablename = t2.relname
-		<if cn.lhx.mall.thirdpart.test="tableName != null and tableName.trim() != ''">
+		<if test="tableName != null and tableName.trim() != ''">
 			and t1.tablename like concat('%', #{tableName}, '%')
 		</if>
 		order by t1.tablename desc
@@ -24,14 +24,14 @@
 
 	<select id="queryTable" resultMap="tableMap">
 		select t1.tablename as tableName, obj_description(relfilenode, 'pg_class') as tableComment, now() as createTime from pg_tables t1, pg_class t2
-			where t1.tablename = #{tableName} and t1.tablename = t2.relname
+		where t1.tablename = #{tableName} and t1.tablename = t2.relname
 	</select>
 
 	<select id="queryColumns" resultMap="tableMap">
- 		select t2.attname as columnName, pg_type.typname as dataType, col_description(t2.attrelid,t2.attnum) as columnComment, '' as extra,
-			(CASE t3.contype WHEN 'p' THEN 'PRI' ELSE '' END) as columnKey
+		select t2.attname as columnName, pg_type.typname as dataType, col_description(t2.attrelid,t2.attnum) as columnComment, '' as extra,
+		(CASE t3.contype WHEN 'p' THEN 'PRI' ELSE '' END) as columnKey
 		from pg_class as t1, pg_attribute as t2 inner join pg_type on pg_type.oid = t2.atttypid
-			left join pg_constraint t3 on t2.attnum = t3.conkey[1] and t2.attrelid = t3.conrelid
+		left join pg_constraint t3 on t2.attnum = t3.conkey[1] and t2.attrelid = t3.conrelid
 		where t1.relname = #{tableName} and t2.attrelid = t1.oid and t2.attnum>0
 	</select>
 </mapper>

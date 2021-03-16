@@ -34,4 +34,9 @@ public class MemberReceiveAddressServiceImpl extends ServiceImpl<MemberReceiveAd
         return this.list(new LambdaQueryWrapper<MemberReceiveAddressEntity>().eq(MemberReceiveAddressEntity::getMemberId,memberId));
     }
 
+    @Override
+    public MemberReceiveAddressEntity getDefaultAddr(Long memberId) {
+        return this.getOne(new LambdaQueryWrapper<MemberReceiveAddressEntity>().eq(MemberReceiveAddressEntity::getMemberId,memberId).eq(MemberReceiveAddressEntity::getDefaultStatus,1));
+    }
+
 }

@@ -42,6 +42,18 @@ public class OrderController {
         return R.ok().put("page", page);
     }
 
+    /**
+     * 查询当前登录会员的订单列表
+     * @param params
+     * @return
+     */
+    @PostMapping("/listWithItem")
+    public R listWithItem(@RequestBody Map<String, Object> params){
+        PageUtils page = orderService.queryPageWithItem(params);
+
+        return R.ok().put("page", page);
+    }
+
 
     /**
      * 信息

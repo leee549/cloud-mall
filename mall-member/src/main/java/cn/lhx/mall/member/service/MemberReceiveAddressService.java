@@ -19,5 +19,7 @@ public interface MemberReceiveAddressService extends IService<MemberReceiveAddre
     PageUtils queryPage(Map<String, Object> params);
 
     List<MemberReceiveAddressEntity> getAddress(Long memberId);
+
+    MemberReceiveAddressEntity getDefaultAddr(Long memberId);
 }
 

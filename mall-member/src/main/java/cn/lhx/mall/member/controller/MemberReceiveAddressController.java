@@ -32,6 +32,10 @@ public class MemberReceiveAddressController {
        return memberReceiveAddressService.getAddress(memberId);
     }
 
+    @GetMapping("/{memberId}/defaultAddr")
+    public MemberReceiveAddressEntity getDefaultAddr(@PathVariable("memberId") Long memberId){
+        return memberReceiveAddressService.getDefaultAddr(memberId);
+    }
     /**
      * 列表
      */

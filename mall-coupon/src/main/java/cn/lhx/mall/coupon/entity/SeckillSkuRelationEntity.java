@@ -10,7 +10,7 @@ import lombok.Data;
 
 /**
  * 秒杀活动商品关联
- * 
+ *
  * @author lhx
  * @email 1193106371@qq.com
  * @date 2020-08-31 18:05:32
@@ -44,11 +44,11 @@ public class SeckillSkuRelationEntity implements Serializable {
 	/**
 	 * $column.comments
 	 */
-	private BigDecimal seckillCount;
+	private Integer seckillCount;
 	/**
 	 * $column.comments
 	 */
-	private BigDecimal seckillLimit;
+	private Integer seckillLimit;
 	/**
 	 * $column.comments
 	 */

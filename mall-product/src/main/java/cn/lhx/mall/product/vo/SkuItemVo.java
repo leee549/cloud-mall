@@ -25,6 +25,9 @@ public class SkuItemVo {
     //5 spu的规格参数信息
     private List<SpuItemAttrGroupVo> groupAttr;
 
+    //6.秒杀信息
+    private SeckillInfoVo seckillInfoVo;
+
 
     @Data
     public static class SpuItemAttrGroupVo {

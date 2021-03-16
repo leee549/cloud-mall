@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class LeetCode {
     public static void main(String[] args) {
-        constructArr(new int[]{1,2,3});
+        //constructArr(new int[]{1,2,3});
 
     }
     // 0 1 1 2 3 5 8 13 21

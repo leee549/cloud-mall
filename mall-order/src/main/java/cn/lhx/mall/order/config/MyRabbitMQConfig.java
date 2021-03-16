@@ -81,4 +81,28 @@ public class MyRabbitMQConfig {
                 "order.release.other.#",
                 null);
     }
+
+    /**
+     * 秒杀队列
+     * @return
+     */
+    @Bean
+    public Queue orderSeckillOrderQueue(){
+        return new Queue("order.seckill.order.queue",
+                true,
+                false,
+                false);
+    }
+
+    /**
+     * 交换机与秒杀队列绑定关系
+     * @return
+     */
+    @Bean
+    public Binding orderSeckillOrderQueueBinding(){
+        return new Binding("order.seckill.order.queue",
+                Binding.DestinationType.QUEUE,
+                "order-event-exchange",
+                "order.seckill.order",null);
+    }
 }

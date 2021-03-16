@@ -1,15 +1,20 @@
 package cn.lhx.mall.coupon.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
+import java.awt.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 /**
  * 秒杀活动场次
- * 
+ *
  * @author lhx
  * @email 1193106371@qq.com
  * @date 2020-08-31 18:05:32
@@ -31,10 +36,12 @@ public class SeckillSessionEntity implements Serializable {
 	/**
 	 * $column.comments
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date startTime;
 	/**
 	 * $column.comments
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date endTime;
 	/**
 	 * $column.comments
@@ -43,6 +50,10 @@ public class SeckillSessionEntity implements Serializable {
 	/**
 	 * $column.comments
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date createTime;
+
+	@TableField(exist = false)
+	private List<SeckillSkuRelationEntity> relationSkus;
 
 }

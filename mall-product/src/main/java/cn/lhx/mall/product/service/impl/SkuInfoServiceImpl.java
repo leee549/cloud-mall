@@ -1,11 +1,15 @@
 package cn.lhx.mall.product.service.impl;
 
+import cn.lhx.common.utils.R;
 import cn.lhx.mall.product.entity.SkuImagesEntity;
 import cn.lhx.mall.product.entity.SpuInfoDescEntity;
 import cn.lhx.mall.product.entity.SpuInfoEntity;
+import cn.lhx.mall.product.feign.SeckillFeignService;
 import cn.lhx.mall.product.service.*;
+import cn.lhx.mall.product.vo.SeckillInfoVo;
 import cn.lhx.mall.product.vo.SkuItemSaleAttrVo;
 import cn.lhx.mall.product.vo.SkuItemVo;
+import com.alibaba.fastjson.TypeReference;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +43,10 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
     private AttrGroupService attrGroupService;
     @Resource
     private SkuSaleAttrValueService skuSaleAttrValueService;
+
+    @Resource
+    private SeckillFeignService seckillFeignService;
+
     @Resource
     private ThreadPoolExecutor executor;
     @Override
@@ -144,8 +152,19 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
             skuItemVo.setImages(images);
         }, executor);
 
+        //3.查询当前sku商品是否有参与秒杀活动
+        CompletableFuture<Void> seckillFuture = CompletableFuture.runAsync(() -> {
+            R skuSeckillInfo = seckillFeignService.getSkuSeckillInfo(skuId);
+            if (skuSeckillInfo.getCode() == 0) {
+                SeckillInfoVo seckillInfoVo = skuSeckillInfo.getData(new TypeReference<SeckillInfoVo>() {
+                });
+                skuItemVo.setSeckillInfoVo(seckillInfoVo);
+            }
+        }, executor);
+
+
         //所有完成
-        CompletableFuture.allOf(imgFuture,descFuture,saleAttrFuture,baseAttrFuture).get();
+        CompletableFuture.allOf(imgFuture,descFuture,saleAttrFuture,baseAttrFuture,seckillFuture).get();
 
 
         return skuItemVo;

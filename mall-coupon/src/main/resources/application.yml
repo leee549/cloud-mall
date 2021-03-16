@@ -9,7 +9,7 @@ spring:
     username: root
     password: 123
 #    type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://192.168.56.3:3306/mall_sms?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
+    url: jdbc:mysql://192.168.56.3:3306/mall_sms?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml

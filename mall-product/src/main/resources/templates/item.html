@@ -507,8 +507,13 @@
 									<span>￥</span>
 									<span th:text="${#numbers.formatDecimal(item.info.price,3,2)}">4499.00</span>
 								</li>
-								<li>
-									预约享资格
+								<li style="color: red" th:if="${item.seckillInfoVo!=null}">
+									<span th:if="${#dates.createNow().getTime()<item.seckillInfoVo.startTime}">
+										秒杀活动将于[[${#dates.format(new java.util.Date(item.seckillInfoVo.startTime), 'yyyy-MM-dd hh:mm:ss')}]]进行！
+									</span>
+									<span th:if="${#dates.createNow().getTime()>=item.seckillInfoVo.startTime && #dates.createNow().getTime()<=item.seckillInfoVo.endTime}">
+										秒杀价为：[[${#numbers.formatDecimal(item.seckillInfoVo.seckillPrice,1,2)}]]
+									</span>
 								</li>
 								<li>
 									<a href="">
@@ -628,9 +633,15 @@
 
 								</div>
 							</div>
-							<div class="box-btns-two">
+
+							<div class="box-btns-two" th:if="${item.seckillInfoVo==null}" >
 								<a href="#" id="addToCart" th:attr="skuId=${item.info.skuId}">
 									加入购物车
+								</a>
+							</div>
+							<div class="box-btns-two" th:if="${item.seckillInfoVo!=null}" >
+								<a href="#" id="seckillA" th:if="${#dates.createNow().getTime()>=item.seckillInfoVo.startTime && #dates.createNow().getTime()<=item.seckillInfoVo.endTime}" th:attr="skuId=${item.info.skuId},sessionId=${item.seckillInfoVo.promotionSessionId},code=${item.seckillInfoVo.randomCode}">
+									立即抢购
 								</a>
 							</div>
 							<div class="box-btns-three">
@@ -1310,6 +1321,21 @@
 			var skuId= $(this).attr("skuId");
 			location.href="http://cart.mall.com/addToCart?skuId="+skuId+"&num="+num;
 			return false;
+		})
+
+		$("#seckillA").click(function (){
+
+			var isLogin=[[${session.loginUser!=null}]]
+			if (isLogin){
+				var killId=$(this).attr("sessionid")+"_"+$(this).attr("skuid");
+				var key =$(this).attr("code");
+				var num=$("#numInput").val();
+				location.href="http://seckill.mall.com/kill?killId="+killId+"&key="+key+"&num="+num
+			}else {
+				location.href="http://auth.mall.com/login.html"
+			}
+
+			return fasle;
 		})
 	</script>
 

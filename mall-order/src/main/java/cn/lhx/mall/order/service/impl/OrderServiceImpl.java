@@ -4,6 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.lhx.common.exception.NoStockException;
 import cn.lhx.common.to.SkuHasStockVo;
 import cn.lhx.common.to.mq.OrderTo;
+import cn.lhx.common.to.mq.SeckillOrderTo;
 import cn.lhx.common.utils.R;
 import cn.lhx.common.vo.MemberRespVo;
 import cn.lhx.mall.order.constant.OrderConstant;
@@ -81,6 +82,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, OrderEntity> impleme
 
     @Resource
     private RabbitTemplate rabbitTemplate;
+
+
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -252,6 +255,92 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, OrderEntity> impleme
         payVo.setSubject(itemEntity.getSkuName());
         payVo.setOut_trade_no(order.getOrderSn());
         return payVo;
+    }
+
+    @Override
+    public PageUtils queryPageWithItem(Map<String, Object> params) {
+        MemberRespVo memberRespVo = LoginUserInterceptor.loginUser.get();
+        IPage<OrderEntity> page = this.page(
+                new Query<OrderEntity>().getPage(params),
+                new LambdaQueryWrapper<OrderEntity>().eq(OrderEntity::getMemberId,memberRespVo.getId()).orderByDesc(OrderEntity::getId)
+        );
+        List<OrderEntity> orderRecords = page.getRecords().stream().map(order -> {
+            List<OrderItemEntity> list = orderItemService.list(new LambdaQueryWrapper<OrderItemEntity>().eq(OrderItemEntity::getOrderSn, order.getOrderSn()));
+            order.setItemEntities(list);
+            return order;
+        }).collect(Collectors.toList());
+        page.setRecords(orderRecords);
+        return new PageUtils(page);
+
+
+    }
+
+    @Override
+    public void createSeckillOrder(SeckillOrderTo seckillOrderTo) {
+        //TODO 保存订单信息
+        OrderEntity orderEntity = new OrderEntity();
+        orderEntity.setOrderSn(seckillOrderTo.getOrderSn());
+        orderEntity.setMemberId(seckillOrderTo.getMemberId());
+        orderEntity.setStatus(OrderStatusEnum.CREATE_NEW.getCode());
+        //获取用户默认地址
+        MemberReceiveAddressVo addrVo = memberFeignService.getDefaultAddr(seckillOrderTo.getMemberId());
+        if (addrVo!=null){
+            orderEntity.setReceiverName(addrVo.getName());
+            orderEntity.setReceiverDetailAddress(addrVo.getDetailAddress());
+            orderEntity.setReceiverProvince(addrVo.getProvince());
+            orderEntity.setReceiverPhone(addrVo.getPhone());
+            orderEntity.setReceiverCity(addrVo.getCity());
+            orderEntity.setReceiverPostCode(addrVo.getPostCode());
+            orderEntity.setReceiverRegion(addrVo.getRegion());
+        }
+
+        orderEntity.setModifyTime(new Date());
+        orderEntity.setDeleteStatus(0);
+        //获取收获地址信息
+        // OrderSubmitVo submitVo = confirmVoThreadLocal.get();
+        // R r = wmsFeignService.getFare(submitVo.getAddrId());
+        // FareVo fareVo = r.getData(new TypeReference<FareVo>() {
+        // });
+
+        BigDecimal multiply = seckillOrderTo.getSeckillPrice().multiply(new BigDecimal("" + seckillOrderTo.getNum()));
+        orderEntity.setPayAmount(multiply);
+        orderEntity.setTotalAmount(multiply);
+        //设置运费信息
+        // orderEntity.setFreightAmount(fareVo.getFare());
+
+
+        this.save(orderEntity);
+        //订单项信息
+        OrderItemEntity orderItemEntity = new OrderItemEntity();
+        orderItemEntity.setOrderSn(seckillOrderTo.getOrderSn());
+        //orderItemEntity.setRealAmount(multiply);
+        orderItemEntity.setSkuQuantity(seckillOrderTo.getNum());
+
+        //TODO 获取sku详细信息 prodcutFeignService.getSpuInfoByskuId();
+        R spuInfoBySkuId = productFeignService.getSpuInfoBySkuId(seckillOrderTo.getSkuId());
+        SpuInfoVo data = spuInfoBySkuId.getData(new TypeReference<SpuInfoVo>() {
+        });
+        orderItemEntity.setSpuId(data.getId());
+        orderItemEntity.setSpuName(data.getSpuName());
+        orderItemEntity.setSpuBrand(data.getBrandId().toString());
+        orderItemEntity.setCategoryId(data.getCatalogId());
+
+        R skuInfoBySkuId = productFeignService.getSkuInfoBySkuId(seckillOrderTo.getSkuId());
+        SkuInfoVo skuInfo = skuInfoBySkuId.getData("skuInfo", new TypeReference<SkuInfoVo>() {
+        });
+
+        orderItemEntity.setSkuId(seckillOrderTo.getSkuId());
+        orderItemEntity.setSkuPic(skuInfo.getSkuDefaultImg());
+        orderItemEntity.setSkuName(skuInfo.getSkuName());
+        orderItemEntity.setSkuPrice(skuInfo.getPrice());
+
+        List<String> skuAttrs = productFeignService.skuSaleAttrValues(seckillOrderTo.getSkuId());
+        String skuAttr = StringUtils.collectionToDelimitedString(skuAttrs, ";");
+        orderItemEntity.setSkuAttrsVals(skuAttr);
+
+
+        orderItemService.save(orderItemEntity);
+
     }
 
     /**

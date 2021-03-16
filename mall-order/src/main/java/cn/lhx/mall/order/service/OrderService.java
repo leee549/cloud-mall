@@ -1,5 +1,6 @@
 package cn.lhx.mall.order.service;
 
+import cn.lhx.common.to.mq.SeckillOrderTo;
 import cn.lhx.mall.order.vo.OrderConfirmVo;
 import cn.lhx.mall.order.vo.OrderSubmitResponseVo;
 import cn.lhx.mall.order.vo.OrderSubmitVo;
@@ -35,5 +36,9 @@ public interface OrderService extends IService<OrderEntity> {
     void closeOrder(OrderEntity entity);
 
     PayVo getOrderPay(String orderSn);
+
+    PageUtils queryPageWithItem(Map<String, Object> params);
+
+    void createSeckillOrder(SeckillOrderTo seckillOrderTo);
 }
 

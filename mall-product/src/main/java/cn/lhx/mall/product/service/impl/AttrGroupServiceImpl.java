@@ -125,7 +125,9 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
                 //查询分组信息
                 AttrGroupEntity attrGroupEntity = attrGroupService.getOne(new LambdaQueryWrapper<AttrGroupEntity>().eq(AttrGroupEntity::getCatelogId,catalogId).eq(AttrGroupEntity::getAttrGroupId,i));
                 // AttrGroupEntity attrGroupEntity = attrGroupService.getById(i);
-                spuItemAttrGroupVo.setGroupName(attrGroupEntity.getAttrGroupName());
+                if (attrGroupEntity!=null){
+                    spuItemAttrGroupVo.setGroupName(attrGroupEntity.getAttrGroupName());
+                }
                 //查询到Attr集合信息
                 List<ProductAttrValueEntity> productAttrValueEntities = productAttrValueService.list(new LambdaQueryWrapper<ProductAttrValueEntity>().eq(ProductAttrValueEntity::getSpuId,spuId).in(ProductAttrValueEntity::getAttrId, relationAttrIds));
                 //封装attrs信息

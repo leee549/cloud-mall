@@ -1,14 +1,12 @@
 package cn.lhx.mall.coupon.controller;
 
 import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cn.lhx.mall.coupon.entity.SeckillSessionEntity;
 import cn.lhx.mall.coupon.service.SeckillSessionService;
@@ -29,6 +27,12 @@ import cn.lhx.common.utils.R;
 public class SeckillSessionController {
     @Autowired
     private SeckillSessionService seckillSessionService;
+
+    @GetMapping("/future3DaysSession")
+    public R getFuture3DaysSession(){
+        List<SeckillSessionEntity> sessions =seckillSessionService.getFuture3DaysSession();
+        return R.ok().setData(sessions);
+    }
 
     /**
      * 列表
@@ -59,6 +63,7 @@ public class SeckillSessionController {
     @RequestMapping("/save")
     // @RequiresPermissions("coupon:seckillsession:save")
     public R save(@RequestBody SeckillSessionEntity seckillSession){
+        seckillSession.setCreateTime(new Date());
 		seckillSessionService.save(seckillSession);
 
         return R.ok();

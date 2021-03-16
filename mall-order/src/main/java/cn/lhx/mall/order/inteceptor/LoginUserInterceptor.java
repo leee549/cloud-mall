@@ -8,6 +8,8 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author lee549
@@ -19,7 +21,9 @@ public class LoginUserInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
+        // Set<Object> set = new HashSet<>();
+        // AntPathMatcher antPathMatcher = new AntPathMatcher();
+        // antPathMatcher.match("",request.getRequestURI());
         if (new AntPathMatcher().match("/order/order/status/**",request.getRequestURI())) {
             return true;
         }

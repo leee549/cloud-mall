@@ -18,13 +18,14 @@ public class AlipayTemplate {
     private String app_id = "2021000117614887";
 
     // 商户私钥，您的PKCS8格式RSA2私钥
-    private String merchant_private_key = "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCfEwuglGAMAoBwy+TFG5GjG3jeIsuDebGSxBUtrYWrKN0NjVheai8V14CdDjKWDoajYHZqL8UAx39aowqwwUyky54Sbx7EpSex2l5A6U62JKd99qH3n1L26KlWmBTD9vG4DYvwqjdQhC5Va5z0tg9Cv2B0RxKadcQIm+kEcR+guszZEWyqJZKeEyuqPUA7HLmfujSKWlmmUNQXybsk8xN9g6taR4pcR4odNRDQZH1MfCuDUup9DfwHpNcJHq/lNIlt3Zy6qhM8pPAsl0aLeZkRvOQoTQQyFFoVW9EsZjwUhAeLD3mkVisY/cUjCKXOJ7xvF9tfy4nQOeEEU72ImJIDAgMBAAECggEBAJP2ZCdOO/SP0yaYEMfit9mOcSO2G7TEWg6ZAtYFBENLdCnp4luXywo29HOhxB3djxCiZiKpIkZyShxlcUkt03upxfOBlo30zPJamrcoDEXR3FWHNeqdMM9nZDOerBoHNZksSJFn0qG7AVoFCe549cLxPeeKQFyZ0+jqFJlEG9Ykz5chDskoXkIr8Xl6n/brY+6JgwqhoOIhg+gJm3EEUcKajETerhcwluL8419bsymMCY9vFj0FxpaiieTIcuRg1qUDvPP9WpJ1tD6EDZ2AZA/am36HIYwG9FoXgc8KdGFPsWaTCwRk5mvcZ1Q9pzWYUz4xf30bKnHi7Dkzf3on53kCgYEA6SPosZwfTtHCh+A9qA5O36kRDlPmFF2TSh4aKVKsepxruuXvImfpS5G8hxEUkTzmDvXef1ZhGHqvAqsmzOMUhy1zOF0GErnh1zTf0i3Jd42mL5mRFPF93dG//QjYPD8Tjya1M9vpTT55ameEHq7L10BHwd9TfzRhsRNqz9hXJb0CgYEArqv/Rv/d/mCbw0I35Vbfp2a8fn/GgQLVRk5Ga183uSyRARdgRI2OZnE3XBFd5WDdDuTHAQP6iS7gmlP40gasnRbkoeyA7eL34gHdnG52AcILw5djAkix7pnGideq9jr5wSxVQpKXdp8T0HJ7xio977aQcbtRjfQXl24NokMOsr8CgYEAqN9g2t36c45O+Tr9jjCnAy0kdJtjChdp7AL38jy3QKzy/9Mzr1lTTHDI/ZDqs/VHs0h3HQeFl0SuZiFxHnHR2cSbNBV1o7TPGKJtCYIu75FD8jCrPV9bS4R2K6PvdVw/H67rDCBb0p7RNbi7o7n7XvRpxc2tXnOj267z7I+JOIUCgYBxaUu+lbNVzvRTu1L/nYBp+NK6b8w7R9OiaoBehtxvZvhfdQYUfLTQ3wHKzZvhqxrc6L4tcp/hIobCrXMJKzw4YvzgBedQjeXU4NE7GJ2WVp+8xzaJ7Rlaio3WQinG5lPzkQ1qxDOD2ZXL6gljiVndovP2ZGF3gd0vfU1s5Y1NkQKBgBtpfR1Jxb/7MWkG3Iy5KuPMDM26DxM5eaUg+jYf7aUn8BNFw9j9YNF0eagc+yPtJ95mB/rO0mbsNet9FQ09oB2ECQpTvmSsAcNCdANwboVjPFmyH83AHT9UJUUgn4HJuQbFA9ehAXiErgS5CKpyTLsec43DvjiWAzq/alvtiFWh";
+    private String merchant_private_key = "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCXfV43RzEC8K1zLMQKMrTUZ4+7NkxfJE/GIoqI8st+eNFKyL2kg3dDr/aVHK77oiVC3QCCzgMOrFHmQHG66XbuF4mKzQFKt9cT8eEbXvm9ll+Tlhns034JeZ8CQJ0FHDoHpAkyMpSK0CgbyMiCSata98iC+HAY14KzAaSPgtq1AJm+QY6UqSLGEH66MgMPErooJpHMqysr4C3tH3WgW1VsKu+3labKK2vzon8arLRnuy00bLXOqiNfRQzFVH1Zr1zhV5z93lCdSIMLKxB/+EjpQnJ2Uq7Y+tIuVtZEehV99fwuGoWdIkOUNS073Nais3p0Jwv4uX6K+wyAGNTePx61AgMBAAECggEAFWLZfixKuwOHOQ9EzbvC04mbPO65cWUK7gnKTPMZz0z3Hvuf6i21FJUu1nYqLdQCNqJEhDLZM6UYGs1WQPDcnVgtTq8KU6YIcwRepyKNVzp3W7qBBnIFBQlqbUL559LITnPV6IRDfCVOxD1gMSR9UGZSpEq2aItkJClDNg9fGNY5Q8qeNvnpfV0Mx17CKPxDbWa3v7FCsz5HHqdwyCdt8fFzvH8yz+I3tAewx0MsWlAOpi15MqsTUpXwNXTl6IMMttjaf0zxl8yBj50SzdjblQGJEJOxHxYngRCdxX5IEX0+CRcp0JV0+ocwTVTeclCga+WuCh78HSiu8QQiH9nKsQKBgQDFSe/emckkWwe12datEvdc704QEFUDGK37fikftRkBYEkD4kKLBPUb1zT+qZtdigA2JIWBQs2/lkwNl9IEha6e2bM37StVAGMKWTFeU+KvTm43P7mtlss1c4SbOu8LxOXFlwKSY19ji+eyRQWu44fEk0BeV3c6aV3b7D+mqwnKhwKBgQDEklD3xDI3Gw3RDhR1iQtqPHBThBV0NUIRweaGL6cZPO4MpqXN/ROSPBlAuDxLF9NJrWVJIPAJF9oKQywMp+0eRJUx0RMG/gOmLk4wCzjd8+T/RxFgXYsuvJa3tsEBif0UNxoVUlohOP8m8dPXTk3VoPs1/d5fPl5SSZvHDEBv4wKBgQCDMl3/jAlE0fxYpFqskdZJySICcLn36yuX+Rfj7AyK67riiE50IIHXV8/4IlYdaC4n0zWs9f3ZEFvXFkUlmLi9DkyuPlv4lN9H/HRmJCa1KdUFjK0vkP3lt8JRcGmTTAb41Slyq/69NkaIOHpFCS46PSorEsNI5tTx8TOK5GcIdQKBgQC0C3xD5B1GYe4+zBGrMhIVhTQxGqr33IwebaZyw5TexfMX/U+io6nYaFmM8PKwqSrqsfoyiAuzmHgqrCndkbXa4mBw15oA7opzHLiawrycdvcJZpOg2y1Paob10FtpyHTYnjuyydIp2eXCSv+Iln0uLZvKcTPLsvl7j1Yyc6NVlwKBgG2mIOiYTCjF4LmcscTeHFjJ2tt8vvtkCcbyMrZxU2I8dQnTzBf4XzMexFpt/8nnvsPtSBvUiHO5kb0l29J1b3/G1cpZiWwKnX8DXkTjWT1ksyc64nxTrJqHC/OCE+HbyYHFKbOkNzPfvDAuW25U/DmqZ8R1SzIaCV9kFEM/iL9a";
     // 支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。
     private String alipay_public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoUp73H7UOBuo88MvcfyL3eW8ljdpspZMREbi+yHslxKesnDaQNwE79AItV8inpIjjKej+i0/8vP+dnYOtIDPEgUF5Yk7EN47VmcHlUczZonZFIF23StfXPCIG3pulNCnCAcble2+TUgYXWTQxSVQqnmTadWtvU3SZLqL3+neTT+22QK8KeOok+X4HuGehyGjttn52ZZybBy56+PB2wgqysbu+OCrPlJaphnvQ4ixnxzCmiELGfwukdYDS76CEOP+9gAX0YLEe8O7GhzxppwqHrrEJCaXItKhFphUVpcGaOuuS870nA2KSAP5hStTjentBJbjM/0NHRfLMa5LLHCqrwIDAQAB";
+
     // 服务器[异步通知]页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
     // 支付宝会悄悄的给我们发送一个请求，告诉我们支付成功的信息
     private String notify_url;
-
+    //TODO 订单异步通知，收单未做
     // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
     //同步通知，支付成功，一般跳转到成功页
     private String return_url = "http://member.mall.com/memberOrder.html";
@@ -34,6 +35,8 @@ public class AlipayTemplate {
 
     // 字符编码格式
     private String charset = "utf-8";
+
+    private String timeout= "30m";
 
     // 支付宝网关； https://openapi.alipaydev.com/gateway.do
     private String gatewayUrl = "https://openapi.alipaydev.com/gateway.do";
@@ -63,8 +66,14 @@ public class AlipayTemplate {
         alipayRequest.setBizContent("{\"out_trade_no\":\""+ out_trade_no +"\","
                 + "\"total_amount\":\""+ total_amount +"\","
                 + "\"subject\":\""+ subject +"\","
-                + "\"body\":\""+ body +"\","
+                + "\"body\":\""+body  +"\","
+                + "\"timeout_express\":\""+ timeout +"\","
                 + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
+        // alipayRequest.setBizContent("{\"out_trade_no\":\""+ out_trade_no +"\","
+        //         + "\"total_amount\":\""+ total_amount +"\","
+        //         + "\"subject\":\""+ subject +"\","
+        //         + "\"body\":\""+ body +"\","
+        //         + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
 
         String result = alipayClient.pageExecute(alipayRequest).getBody();
 

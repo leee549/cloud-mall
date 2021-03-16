@@ -28,7 +28,9 @@ public class test {
 
     @Test
     public void test(){
-        smsComponent.sendSmsCode("13189189106","321345");
+        //18565301402
+        //smsComponent.sendSmsCode("13189189106","321345");
+        smsComponent.sendSmsCode2("13189189106","321345");
     }
 
 
